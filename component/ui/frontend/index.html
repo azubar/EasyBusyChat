@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy-Busy.chat</title>
+    <style>
+        :root {
+            --clr-white: #FFFFFF;
+            --clr-black: #000000;
+            --clr-green-50: #121C21;
+            --clr-green-40: #084545;
+            --clr-green-30: #0F8A75;
+            --clr-green-20: #85E0C2;
+            --clr-green-10: #B8E0CC;
+            --clr-yellow-30: #F0DA75;
+            --clr-yellow-20: #F5E8D6;
+            --clr-yellow-10: #F7F2ED;
+            --clr-blue-30: #2662D9;
+            --clr-blue-20: #B8C5E0;
+            --clr-blue-10: #DEE3ED;
+            --clr-red-30: #E1515D;
+            --clr-red-20: #E0B8B8;
+            --clr-red-10: #F5F0F0;
+            --clr-black-30: #171A1B;
+            --clr-black-25: #111B20;
+            --clr-black-20: #1B2122;
+            --clr-black-10: #2B383B;
+
+            --eb-color-primary: var(--clr-green-30);
+            --eb-color-secondary: var(--clr-yellow-30);
+            --eb-bg: var(--clr-yellow-10);
+            --eb-header-bg-color: var(--clr-white);
+            --eb-header-text-color: var(--clr-black-30);
+            --eb-footer-bg-color: var(--clr-green-40);
+            --eb-footer-text-color: var(--clr-white);
+            --eb-chat-body-bg-color: var(--clr-white);
+            --eb-chat-body-text-color: var(--clr-black-30);
+            --eb-container-width: 1200px;
+            --eb-container-padding: 1rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        .btn {
+            font-family: inherit;
+            font-size: inherit;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: inherit;
+            background-color: transparent;
+            appearance: none;
+            text-decoration: none;
+            border: 1px solid transparent;
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+            transition: all .3s ease;
+            width: fit-content;
+            gap: .5rem;
+        }
+
+        .btn--primary {
+            padding: 16px 20px;
+            border-radius: 16px;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1;
+
+            background-color: var(--eb-color-primary);
+            border: 1px solid var(--color-primary);
+            color: var(--clr-white);
+        }
+
+        .form-input {
+            padding: 16px 20px;
+            border: none;
+            border: 1px solid var(--input-border-color, var(--clr-black-10));
+            border-radius: 8px;
+            color: var(--input-text-color, var(--clr-black-30));
+            background-color: transparent;
+            outline: none;
+            max-width: 100%;
+            width: 100%;
+        }
+
+        .eb-container {
+            max-width: var(--eb-container-width);
+            margin: 0 auto;
+            padding: 0 var(--eb-container-padding);
+        }
+
+        .eb-chat {
+            height: 100%;
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--eb-bg);
+        }
+
+        .eb-chat-header {
+            background-color: var(--eb-header-bg-color);
+            color: var(--eb-header-text-color);
+            padding: 1rem 0;
+        }
+
+        .eb-chat-body {
+            flex: 1;
+            padding: 1rem 0;
+        }
+
+        .eb-chat-content {
+            background-color: var(--eb-chat-body-bg-color);
+            color: var(--eb-chat-body-text-color);
+            height: 100%;
+            flex: 1;
+            border-radius: 1rem;
+            max-height: 75dvh;
+        }
+
+        .eb-chat-content__message {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: 1rem;
+        }
+
+        .eb-chat-body>.eb-container {
+            height: 100%;
+        }
+
+        .eb-chat-footer {
+            background-color: var(--eb-footer-bg-color);
+            color: var(--eb-footer-text-color);
+            padding: 0.5rem 0;
+        }
+
+        .eb-header-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .eb-header-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .eb-header-logo {
+            display: block;
+            width: 100px;
+            height: auto;
+        }
+
+        .eb-footer-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .eb-footer-logo {
+            display: block;
+            width: 100px;
+            height: auto;
+        }
+
+        .eb-footer-links {
+            list-style-type: none;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .eb-footer-links-item__link {
+            color: var(--clr-white);
+            text-decoration: none;
+        }
+
+        .eb-chat-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .eb-chat-form__group {
+            display: block;
+        }
+
+        .eb-chat-form__group+.eb-chat-form__group {
+            margin-top: 1rem;
+        }
+
+        .eb-chat-form__label {
+            display: block;
+            margin-bottom: 0.2rem;
+            font-size: 0.75rem;
+        }
+
+        #chat_container,
+        #chat_container_holder,
+        .easy-busy-chats-plugin {
+            height: 100%;
+        }
+
+        #chat_container:empty {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="eb-chat">
+        <main class="eb-chat-body">
+            <div class="eb-container">
+                <div class="eb-chat-content" id="chat_container_holder" data-chat-wrapper>
+                    <div class="eb-chat-content__message" data-chat-message>
+                        Завантаження...
+                    </div>
+                    <div id="chat_container"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script>
+        (function () {
+            'use strict';
+
+            // ── Console logging bridge to Tauri ─────────────────────────────────
+            var _originalLog = console.log;
+            var _originalWarn = console.warn;
+            var _originalError = console.error;
+            var _inConsoleLog = false;
+
+            function _forwardLog(level, args) {
+                if (_inConsoleLog) return;
+                _inConsoleLog = true;
+                try {
+                    var message = Array.prototype.slice.call(args).map(function(arg) {
+                        if (typeof arg === 'object') {
+                            try { return JSON.stringify(arg); } catch(e) { return String(arg); }
+                        }
+                        return String(arg);
+                    }).join(' ');
+
+                    if (window.__TAURI__ && window.__TAURI__.core) {
+                        window.__TAURI__.core.invoke('on_webview_message', {
+                            payload: JSON.stringify({
+                                event: 'console_log',
+                                level: level,
+                                message: message
+                            })
+                        }).catch(function() {});
+                    }
+                } catch(e) {
+                    // Ignore
+                } finally {
+                    _inConsoleLog = false;
+                }
+            }
+
+            console.log = function() {
+                _originalLog.apply(console, arguments);
+                _forwardLog('info', arguments);
+            };
+            console.warn = function() {
+                _originalWarn.apply(console, arguments);
+                _forwardLog('warn', arguments);
+            };
+            console.error = function() {
+                _originalError.apply(console, arguments);
+                _forwardLog('error', arguments);
+            };
+
+            // ── Polyfill for window.chrome.webview ───────────────────────────────
+            var _listeners = [];
+
+            var easybusyIpc = {
+                postMessage: function(data) {
+                    try {
+                        if (window.__TAURI__ && window.__TAURI__.core) {
+                            var result = window.__TAURI__.core.invoke('on_webview_message', {
+                                payload: JSON.stringify(data)
+                            });
+                            if (result && typeof result.catch === 'function') {
+                                result.catch(function() { console.error('Failed to send message to Tauri'); });
+                                return result;
+                            }
+                        } else {
+                            console.warn('Tauri IPC is not available for EasyBusyChat message');
+                        }
+                    } catch (error) {
+                        console.error('Failed to invoke Tauri command:', error);
+                    }
+                },
+                addEventListener: function(type, handler) {
+                    if (type === 'message') {
+                        _listeners.push(handler);
+                    }
+                },
+                removeEventListener: function(type, handler) {
+                    if (type === 'message') {
+                        _listeners = _listeners.filter(function(h) { return h !== handler; });
+                    }
+                },
+                __dispatchMessage: function(data) {
+                    var event = { data: data };
+                    for (var i = 0; i < _listeners.length; i++) {
+                        try {
+                            _listeners[i](event);
+                        } catch(e) {
+                            console.error('Polyfill dispatch error:', e);
+                        }
+                    }
+                }
+            };
+
+            window.easybusychat = easybusyIpc;
+
+            if (!window.chrome) window.chrome = {};
+            if (!window.chrome.webview) {
+                window.chrome.webview = easybusyIpc;
+            } else {
+                // Do NOT overwrite native postMessage, as it is used by Tauri's IPC
+                window.chrome.webview.__dispatchMessage = easybusyIpc.__dispatchMessage;
+            }
+            // ── Chat logic ───────────────────────────────────────────────────────
+            const _pending = new Map();
+            let _reqId = 0;
+
+            const _isHost = true;
+
+            window.easybusychat.addEventListener('message', function (event) {
+                var msg = event.data;
+                if (!msg) return;
+
+                if (msg.event === 'action_result') {
+                    var cb = _pending.get(msg.reqId);
+                    if (!cb) return;
+                    _pending.delete(msg.reqId);
+                    clearTimeout(cb.timer);
+                    if (msg.success) {
+                        cb.resolve(msg.payload);
+                    } else {
+                        cb.reject(new Error(msg.error || 'Дію відхилено'));
+                    }
+                    return;
+                }
+
+                if (msg.event === 'host_command') {
+                    var commandRequest = {
+                        action: msg.action,
+                        operationId: msg.operationId,
+                        payload: msg.payload || {},
+                    };
+                    if (!window.__TAURI__ || !window.__TAURI__.core) {
+                        window.easybusychat.postMessage({
+                            event: 'commandResult',
+                            payload: {
+                                operationId: msg.operationId,
+                                success: false,
+                                code: 'ui_not_connected',
+                                message: 'Tauri command bridge is unavailable',
+                            },
+                        });
+                        return;
+                    }
+                    window.__TAURI__.core.invoke('resolve_contact_chat', {
+                        request: commandRequest,
+                    }).then(function (result) {
+                        window.easybusychat.postMessage({
+                            event: 'commandResult',
+                            payload: result,
+                        });
+                    }).catch(function () {
+                        window.easybusychat.postMessage({
+                            event: 'commandResult',
+                            payload: {
+                                operationId: msg.operationId,
+                                success: false,
+                                code: 'api_server_error',
+                                message: 'Tauri API command failed',
+                            },
+                        });
+                    });
+                    return;
+                }
+            });
+
+            function cancelPendingActions(reason) {
+                _pending.forEach(function (pending) { clearTimeout(pending.timer); pending.reject(new Error(reason)); });
+                _pending.clear();
+            }
+            window.addEventListener('beforeunload', function () { cancelPendingActions('Сесію завершено'); });
+            function sendToBas(actionId, payload) {
+                return new Promise(function (resolve, reject) {
+                    if (_pending.size >= 128) { reject(new Error('Забагато незавершених дій')); return; }
+                    if (!window.__TAURI__ || !window.__TAURI__.core) { reject(new Error('BAS недоступний')); return; }
+                    var id = ++_reqId;
+                    var timer = setTimeout(function () {
+                        _pending.delete(id);
+                        reject(new Error('BAS не відповів протягом 30 секунд'));
+                    }, 30000);
+                    _pending.set(id, { resolve: resolve, reject: reject, timer: timer });
+                    var sent = window.easybusychat.postMessage({
+                        event: 'chat_action', reqId: id,
+                        payload: Object.assign({}, payload, { actionId: actionId })
+                    });
+                    if (sent && sent.catch) sent.catch(function () {
+                        clearTimeout(timer); _pending.delete(id); reject(new Error('Не вдалося передати дію BAS'));
+                    });
+                });
+            }
+
+            var supportedChatActionIds = {
+                view_contact: true,
+                create_contact: true,
+                link_contact: true,
+                create_opportunity: true,
+            };
+            var chatActionSettings = [
+                { id: 'view_contact' },
+                { id: 'create_contact' },
+                { id: 'link_contact' },
+                { id: 'create_opportunity' },
+            ];
+            var chatAppRendered = false;
+
+            window.setChatMenuActions = function (actions) {
+                if (!Array.isArray(actions)) return false;
+
+                var nextSettings = [];
+                var addedActionIds = {};
+                for (var i = 0; i < actions.length; i++) {
+                    var sourceSetting = actions[i];
+                    var actionSetting = typeof sourceSetting === 'string'
+                        ? { id: sourceSetting }
+                        : sourceSetting;
+                    if (!actionSetting || typeof actionSetting.id !== 'string') continue;
+                    if (!supportedChatActionIds[actionSetting.id]) continue;
+                    if (addedActionIds[actionSetting.id]) continue;
+
+                    var normalizedSetting = { id: actionSetting.id };
+                    if (typeof actionSetting.label === 'string' && actionSetting.label) {
+                        normalizedSetting.label = actionSetting.label;
+                    }
+                    if (typeof actionSetting.description === 'string') {
+                        normalizedSetting.description = actionSetting.description;
+                    }
+                    nextSettings.push(normalizedSetting);
+                    addedActionIds[actionSetting.id] = true;
+                }
+
+                var settingsChanged = JSON.stringify(chatActionSettings) !== JSON.stringify(nextSettings);
+                chatActionSettings = nextSettings;
+                if (settingsChanged && chatAppRendered) {
+                    return initializeChat();
+                }
+                return true;
+            };
+
+            function applyChatActionSettings(actions) {
+                var actionsById = {};
+                for (var i = 0; i < actions.length; i++) {
+                    actionsById[actions[i].id] = actions[i];
+                }
+
+                var result = [];
+                for (var j = 0; j < chatActionSettings.length; j++) {
+                    var actionSetting = chatActionSettings[j];
+                    var action = actionsById[actionSetting.id];
+                    if (!action) continue;
+
+                    var configuredAction = Object.assign({}, action);
+                    if (actionSetting.label) {
+                        configuredAction.label = actionSetting.label;
+                    }
+                    if (typeof actionSetting.description === 'string') {
+                        configuredAction.description = actionSetting.description;
+                    }
+                    result.push(configuredAction);
+                }
+                return result;
+            }
+
+            function getHashParams() {
+                var hash = window.location.hash.slice(1);
+                var params = new URLSearchParams(hash);
+                return {
+                    selectedProvider: params.get('provider') || undefined,
+                    selectedAccountId: params.get('accountid') || params.get('companyid') || undefined,
+                    selectedChatId: params.get('chatid') || undefined,
+                    selectedPhone: params.get('phone') || undefined,
+                };
+            }
+
+            function sanitizePayload(payload) {
+                try {
+                    return JSON.parse(JSON.stringify(payload || {}));
+                } catch (error) {
+                    console.warn("easy_busy_chats: failed to sanitize payload", error);
+                    return {};
+                }
+            }
+
+            function postHostEvent(eventName, payload) {
+                window.easybusychat.postMessage({
+                    event: eventName,
+                    payload: Object.assign({
+                        href: window.location.href,
+                        readyState: document.readyState,
+                        timestamp: Date.now(),
+                        generation: chatSettings.generation,
+                    }, payload || {}),
+                });
+            }
+
+            var chatSettings = {
+                companyId: '',
+                accessToken: '',
+                lang: 'uk-UA',
+                pluginUrl: 'https://chats.easy-busy.cloud/plugin/loader.js?v=20260510',
+                muted: false,
+                generation: 1,
+            };
+
+            window.setMutedState = function (muted) {
+                var nextMuted = !!muted;
+                if (chatSettings.muted === nextMuted) return;
+                chatSettings.muted = nextMuted;
+                console.log("Notification muted state changed:", chatSettings.muted);
+                if (chatAppRendered) { return initializeChat(); }
+            };
+
+            window.showHtmlNotification = function (title, text) {
+                if (chatSettings.muted) {
+                    console.log("Notification muted, skipping popup");
+                    return;
+                }
+                if (typeof Notification !== 'undefined') {
+                    if (Notification.permission === 'granted') {
+                        new Notification(title, { body: text });
+                    } else if (Notification.permission !== 'denied') {
+                        Notification.requestPermission().then(function (permission) {
+                            if (permission === 'granted') {
+                                new Notification(title, { body: text });
+                            }
+                        });
+                    }
+                }
+                console.log("HTML5 Notification requested");
+            };
+
+            var lastOpenedSelection = null;
+            function scalarId(value) { return value === null || value === undefined ? null : String(value); }
+            function firstDefined() {
+                for (var i = 0; i < arguments.length; i++) if (arguments[i] !== null && arguments[i] !== undefined) return arguments[i];
+                return null;
+            }
+            var chatCallbacks = {
+                onNotification: async function (message) {
+                    message = message || {};
+                    var chat = message.chat || {};
+                    var from = message.from || {};
+                    var body = message.body || {};
+                    var provider = message.source || chat.provider || null;
+                    var accountId = message.accountId || chat.accountId || null;
+                    var chatId = chat.id || null;
+
+                    window.easybusychat.postMessage({
+                        event: 'notification',
+                        eventType: message.eventType || null,
+                        title: from.fullName || chat.title || 'EasyBusy Chats',
+                        text: body.text || message.body || chat.lastMessageText || '',
+                        chatId: chatId,
+                        provider: provider,
+                        accountId: accountId,
+                        raw: message,
+                    });
+
+                    // Trigger local HTML5 notification popup if not muted
+                    if (!chatSettings.muted) {
+                        window.showHtmlNotification(
+                            from.fullName || chat.title || 'EasyBusy Chats',
+                            body.text || message.body || chat.lastMessageText || ''
+                        );
+                    }
+                },
+
+                onOpenChat: async function (payload) {
+                    payload = sanitizePayload(payload);
+                    var openedChat = payload.chat || payload;
+                    var hashParams = getHashParams();
+                    lastOpenedSelection = {
+                        provider: scalarId(firstDefined(payload.provider, payload.source, openedChat.provider, hashParams.selectedProvider)),
+                        accountId: scalarId(firstDefined(payload.accountId, openedChat.accountId, hashParams.selectedAccountId)),
+                        chatId: scalarId(firstDefined(payload.chatId, openedChat.chatId, openedChat.id, hashParams.selectedChatId)),
+                    };
+                    postHostEvent('chatOpened', lastOpenedSelection);
+                    var actions = [
+                        {
+                            id: 'view_contact',
+                            label: 'Відкрити контакт',
+                            description: 'Відкрити картку контакту в BAS',
+                            callback: function (ctx) {
+                                return sendToBas('view_contact', payload).then(function (result) {
+                                    if (ctx && typeof ctx.onComplete === 'function') {
+                                        ctx.onComplete(result);
+                                    }
+                                    return result;
+                                });
+                            },
+                        },
+                        {
+                            id: 'create_contact',
+                            label: 'Створити контакт',
+                            description: 'Створити новий контакт в BAS на основі даних чату',
+                            callback: function (ctx) {
+                                return sendToBas('create_contact', payload).then(function (result) {
+                                    if (ctx && typeof ctx.onComplete === 'function') {
+                                        ctx.onComplete(result);
+                                    }
+                                    return result;
+                                });
+                            },
+                        },
+                        {
+                            id: 'link_contact',
+                            label: 'Прив\'язати контакт',
+                            description: 'Прив\'язати чат до наявного контакту в BAS',
+                            callback: function (ctx) {
+                                return sendToBas('link_contact', payload).then(function (result) {
+                                    if (ctx && typeof ctx.onComplete === 'function') {
+                                        ctx.onComplete(result);
+                                    }
+                                    return result;
+                                });
+                            },
+                        },
+                        {
+                            id: 'create_opportunity',
+                            label: 'Створити угоду',
+                            description: 'Створити угоду в BAS на основі даних чату',
+                            callback: function (ctx) {
+                                return sendToBas('create_opportunity', payload).then(function (result) {
+                                    if (ctx && typeof ctx.onComplete === 'function') {
+                                        ctx.onComplete(result);
+                                    }
+                                    return result;
+                                });
+                            },
+                        },
+                    ];
+                    return applyChatActionSettings(actions);
+                },
+            };
+
+            function showMessage(text) {
+                var el = document.querySelector('[data-chat-message]');
+                if (el) { el.textContent = text; el.style.display = ''; }
+            }
+
+            function hideMessage() {
+                var el = document.querySelector('[data-chat-message]');
+                if (el) { el.textContent = ''; el.style.display = 'none'; }
+            }
+
+            var initialization = null;
+            var configLoading = null;
+            function initializeChat() {
+                if (initialization) return initialization;
+                initialization = new Promise(function (resolve, reject) {
+                    var elapsed = 0;
+                    var interval = setInterval(function () {
+                        elapsed += 100;
+                        if (!window.renderChatsApp) {
+                            if (elapsed >= 30000) { clearInterval(interval); reject(new Error('Чат не завантажився протягом 30 секунд')); }
+                            return;
+                        }
+                        clearInterval(interval);
+                        try {
+                            if (chatAppRendered && window.unmountChatsApp) window.unmountChatsApp('chat_container');
+                            chatAppRendered = false;
+                            lastOpenedSelection = null;
+                            var hashParams = getHashParams();
+                            try { window.localStorage.setItem('token', chatSettings.accessToken); } catch (e) { console.warn('localStorage unavailable'); }
+                            window.renderChatsApp('chat_container', {
+                                companyId: chatSettings.companyId,
+                                accessToken: chatSettings.accessToken,
+                                lang: chatSettings.lang,
+                                selectedProvider: hashParams.selectedProvider,
+                                selectedChatId: hashParams.selectedChatId,
+                                selectedAccountId: hashParams.selectedAccountId,
+                                selectedPhone: hashParams.selectedPhone,
+                                disableBrowserNotifications: chatSettings.muted,
+                                callbacks: chatCallbacks,
+                                onNotification: chatCallbacks.onNotification,
+                            });
+                            chatAppRendered = true;
+                            hideMessage();
+                            postHostEvent('reactReady', { companyId: chatSettings.companyId, hash: window.location.hash });
+                            postHostEvent('navigationCompleted', { hash: window.location.hash, companyId: chatSettings.companyId });
+                            resolve(true);
+                        } catch (error) { reject(error); }
+                    }, 100);
+                }).catch(function (error) {
+                    showMessage(error.message || 'Не вдалося відкрити чат');
+                    postHostEvent('error', { code: 'chat_initialization_failed' });
+                    throw error;
+                }).finally(function () { initialization = null; });
+                return initialization;
+            }
+
+            function loadConfigAndInit() {
+                if (configLoading) return configLoading;
+                if (!window.__TAURI__ || !window.__TAURI__.core) return Promise.reject(new Error('Tauri недоступний'));
+                configLoading = window.__TAURI__.core.invoke('get_config').then(function (config) {
+                    if (!config) return false;
+                    if (chatSettings.generation !== Number(config.generation || 1) || chatSettings.companyId !== config.companyId) {
+                        cancelPendingActions('Конфігурацію чату змінено');
+                    }
+                    chatSettings.companyId = config.companyId;
+                    chatSettings.accessToken = config.accessToken;
+                    chatSettings.generation = Number(config.generation || 1);
+                    if (Array.isArray(config.chatMenuActions)) { window.setChatMenuActions(config.chatMenuActions); }
+                    if (document.getElementById('easybusy-loader-script')) return initializeChat();
+                    return new Promise(function (resolve, reject) {
+                        var script = document.createElement('script');
+                        script.id = 'easybusy-loader-script';
+                        script.src = chatSettings.pluginUrl;
+                        var deadline = setTimeout(function () { script.onload = null; script.onerror = null; if (script.remove) script.remove(); reject(new Error('Перевищено час завантаження плагіну')); }, 30000);
+                        script.onload = function () { clearTimeout(deadline); initializeChat().then(resolve, reject); };
+                        script.onerror = function () { clearTimeout(deadline); if (script.remove) script.remove(); reject(new Error('Помилка завантаження плагіну чату')); };
+                        document.head.appendChild(script);
+                    });
+                }).catch(function (error) { showMessage(error.message || 'Помилка отримання налаштувань'); throw error; })
+                    .finally(function () { configLoading = null; });
+                return configLoading;
+            }
+
+            window.onConfigReady = function () {
+                postHostEvent('webviewReady', {
+                    configReady: false,
+                    source: 'onConfigReady',
+                });
+                // A startup get_config may have read null just before setConfig.
+                // Fetch again after that request settles instead of losing this signal.
+                return configLoading ? configLoading.catch(function () {}).then(loadConfigAndInit) : loadConfigAndInit();
+            };
+
+            window.hostNavigating = false;
+            window.navigateChat = function (hash) {
+                var normalized = hash.charAt(0) === '#' ? hash : '#' + hash;
+                var params = new URLSearchParams(normalized.slice(1));
+                if (window.location.hash === normalized && lastOpenedSelection &&
+                    lastOpenedSelection.provider === params.get('provider') &&
+                    lastOpenedSelection.accountId === (params.get('accountid') || params.get('companyid')) &&
+                    lastOpenedSelection.chatId === params.get('chatid')) {
+                    postHostEvent('chatOpened', lastOpenedSelection);
+                    return Promise.resolve(true);
+                }
+                cancelPendingActions('Чат змінено');
+                window.location.hash = normalized;
+                // Host navigation is explicit; internal React hash changes need no remount.
+                return initializeChat();
+            };
+
+            // Initial load attempt.
+            // #chat_container is part of the static markup, so there is no need to
+            // poll for it — start configuration loading as soon as the DOM is ready.
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', function () { loadConfigAndInit().catch(function () {}); });
+            } else {
+                loadConfigAndInit().catch(function () {});
+            }
+        })();
+    </script>
+</body>
+
+</html>

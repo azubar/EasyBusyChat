@@ -1,0 +1,17 @@
+.local/
+target/
+node_modules/
+__pycache__/
+*.pyc
+*.log
+.env
+.env.*
+*.local.json
+/component/ui/gen/
+/component/chat_app/plugin/easy-busy-chats-plugin.umd.js
+*.cfe
+*.cf
+*.dt
+*.1CD
+*.pfx
+*.p12

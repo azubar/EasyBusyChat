@@ -1,0 +1,16 @@
+{
+  "identifier": "default",
+  "description": "Default capabilities for EasyBusyUI",
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+    "core:window:default",
+    "core:window:allow-show",
+    "core:window:allow-hide",
+    "core:window:allow-set-focus",
+    "core:window:allow-set-size",
+    "core:window:allow-set-position",
+    "allow-on-webview-message",
+    "allow-get-config"
+  ]
+}

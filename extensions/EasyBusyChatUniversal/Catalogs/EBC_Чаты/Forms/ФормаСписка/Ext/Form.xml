@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.16">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Чаты (EBC)</v8:content>
+		</v8:item>
+		<v8:item>
+			<v8:lang>uk</v8:lang>
+			<v8:content>Чати (EBC)</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаЗагрузитьСписок" id="62">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ЗагрузитьСписок</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Загрузить список</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>uk</v8:lang>
+						<v8:content>Завантажити список</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаЗагрузитьСписокРасширеннаяПодсказка" id="63"/>
+			</Button>
+			<Button name="ФормаУдалитьВыбранныеЧаты" id="71">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.УдалитьВыбранныеЧаты</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Удалить выбранные чаты</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>uk</v8:lang>
+						<v8:content>Видалити вибрані чати</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаУдалитьВыбранныеЧатыРасширеннаяПодсказка" id="72"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<ChildItems>
+		<Table name="Список" id="1">
+			<CommandBarLocation>None</CommandBarLocation>
+			<DataPath>Список</DataPath>
+			<RowPictureDataPath>Список.DefaultPicture</RowPictureDataPath>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+			<ContextMenu name="СписокКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="СписокКоманднаяПанель" id="3">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="64"/>
+			<SearchStringAddition name="СписокСтрокаПоиска" id="4">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСтрокаПоискаКонтекстноеМеню" id="65"/>
+				<ExtendedTooltip name="СписокСтрокаПоискаРасширеннаяПодсказка" id="66"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокСостояниеПросмотра" id="5">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСостояниеПросмотраКонтекстноеМеню" id="67"/>
+				<ExtendedTooltip name="СписокСостояниеПросмотраРасширеннаяПодсказка" id="68"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокУправлениеПоиском" id="6">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокУправлениеПоискомКонтекстноеМеню" id="69"/>
+				<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="70"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="Код" id="10">
+					<DataPath>Список.Код</DataPath>
+					<Visible>false</Visible>
+					<ContextMenu name="КодКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="КодРасширеннаяПодсказка" id="12"/>
+				</LabelField>
+				<LabelField name="УчетнаяЗапись" id="73">
+					<DataPath>Список.УчетнаяЗапись</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>uk</v8:lang>
+							<v8:content>Обліковий запис</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Учетная запись</v8:content>
+						</v8:item>
+					</Title>
+					<Width>10</Width>
+					<ContextMenu name="УчетнаяЗаписьКонтекстноеМеню" id="74"/>
+					<ExtendedTooltip name="УчетнаяЗаписьРасширеннаяПодсказка" id="75"/>
+				</LabelField>
+				<LabelField name="Провайдер" id="76">
+					<DataPath>Список.Провайдер</DataPath>
+					<Width>10</Width>
+					<ContextMenu name="ПровайдерКонтекстноеМеню" id="77"/>
+					<ExtendedTooltip name="ПровайдерРасширеннаяПодсказка" id="78"/>
+				</LabelField>
+				<LabelField name="ТипЧата" id="19">
+					<DataPath>Список.ТипЧата</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>uk</v8:lang>
+							<v8:content>Тип чату</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тип чата</v8:content>
+						</v8:item>
+					</Title>
+					<Width>10</Width>
+					<ContextMenu name="ТипЧатаКонтекстноеМеню" id="20"/>
+					<ExtendedTooltip name="ТипЧатаРасширеннаяПодсказка" id="21"/>
+				</LabelField>
+				<LabelField name="Наименование" id="7">
+					<DataPath>Список.Наименование</DataPath>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="9"/>
+				</LabelField>
+				<LabelField name="Телефон" id="34">
+					<DataPath>Список.Телефон</DataPath>
+					<Width>12</Width>
+					<ContextMenu name="ТелефонКонтекстноеМеню" id="35"/>
+					<ExtendedTooltip name="ТелефонРасширеннаяПодсказка" id="36"/>
+				</LabelField>
+				<LabelField name="ДатаПоследнегоСообщения" id="25">
+					<DataPath>Список.ДатаПоследнегоСообщения</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>uk</v8:lang>
+							<v8:content>Дата</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата</v8:content>
+						</v8:item>
+					</Title>
+					<Width>12</Width>
+					<Format>
+						<v8:item>
+							<v8:lang>uk</v8:lang>
+							<v8:content>ДФ='HH:mm dd.MM.yy'</v8:content>
+						</v8:item>
+					</Format>
+					<ContextMenu name="ДатаПоследнегоСообщенияКонтекстноеМеню" id="26"/>
+					<ExtendedTooltip name="ДатаПоследнегоСообщенияРасширеннаяПодсказка" id="27"/>
+				</LabelField>
+				<LabelField name="ТекстПоследнегоСообщения" id="28">
+					<DataPath>Список.ТекстПоследнегоСообщения</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>uk</v8:lang>
+							<v8:content>Останнє повідомлення</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Последнее сообщение</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ТекстПоследнегоСообщенияКонтекстноеМеню" id="29"/>
+					<ExtendedTooltip name="ТекстПоследнегоСообщенияРасширеннаяПодсказка" id="30"/>
+				</LabelField>
+				<LabelField name="ИдентификаторEBC" id="13">
+					<DataPath>Список.ИдентификаторEBC</DataPath>
+					<Visible>false</Visible>
+					<ContextMenu name="ИдентификаторEBCКонтекстноеМеню" id="14"/>
+					<ExtendedTooltip name="ИдентификаторEBCРасширеннаяПодсказка" id="15"/>
+				</LabelField>
+				<LabelField name="СоставнойИдентификатор" id="16">
+					<DataPath>Список.СоставнойИдентификатор</DataPath>
+					<Visible>false</Visible>
+					<ContextMenu name="СоставнойИдентификаторКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="СоставнойИдентификаторРасширеннаяПодсказка" id="18"/>
+				</LabelField>
+				<LabelField name="НавигационнаяСсылка" id="22">
+					<DataPath>Список.НавигационнаяСсылка</DataPath>
+					<Visible>false</Visible>
+					<ContextMenu name="НавигационнаяСсылкаКонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="НавигационнаяСсылкаРасширеннаяПодсказка" id="24"/>
+				</LabelField>
+				<LabelField name="ЕстьНепрочитанные" id="31">
+					<DataPath>Список.ЕстьНепрочитанные</DataPath>
+					<Visible>false</Visible>
+					<ContextMenu name="ЕстьНепрочитанныеКонтекстноеМеню" id="32"/>
+					<ExtendedTooltip name="ЕстьНепрочитанныеРасширеннаяПодсказка" id="33"/>
+				</LabelField>
+				<LabelField name="ИмяПользователя" id="37">
+					<DataPath>Список.ИмяПользователя</DataPath>
+					<Visible>false</Visible>
+					<ContextMenu name="ИмяПользователяКонтекстноеМеню" id="38"/>
+					<ExtendedTooltip name="ИмяПользователяРасширеннаяПодсказка" id="39"/>
+				</LabelField>
+				<LabelField name="Активен" id="43">
+					<DataPath>Список.Активен</DataPath>
+					<Visible>false</Visible>
+					<ContextMenu name="АктивенКонтекстноеМеню" id="44"/>
+					<ExtendedTooltip name="АктивенРасширеннаяПодсказка" id="45"/>
+				</LabelField>
+				<LabelField name="ДатаСинхронизации" id="55">
+					<DataPath>Список.ДатаСинхронизации</DataPath>
+					<Format>
+						<v8:item>
+							<v8:lang>uk</v8:lang>
+							<v8:content>ДФ='HH:mm dd.MM.yy'</v8:content>
+						</v8:item>
+					</Format>
+					<ContextMenu name="ДатаСинхронизацииКонтекстноеМеню" id="56"/>
+					<ExtendedTooltip name="ДатаСинхронизацииРасширеннаяПодсказка" id="57"/>
+				</LabelField>
+				<LabelField name="Ссылка" id="58">
+					<DataPath>Список.Ссылка</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<ContextMenu name="СсылкаКонтекстноеМеню" id="59"/>
+					<ExtendedTooltip name="СсылкаРасширеннаяПодсказка" id="60"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Список" id="61">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	СправочникEBC_Чаты.Владелец.Владелец КАК Компания,
+	СправочникEBC_Чаты.Владелец.Провайдер КАК Провайдер,
+	СправочникEBC_Чаты.Владелец КАК УчетнаяЗапись,
+	СправочникEBC_Чаты.Ссылка КАК Ссылка,
+	СправочникEBC_Чаты.ПометкаУдаления КАК ПометкаУдаления,
+	СправочникEBC_Чаты.Код КАК Код,
+	СправочникEBC_Чаты.Наименование КАК Наименование,
+	СправочникEBC_Чаты.ТипЧата КАК ТипЧата,
+	СправочникEBC_Чаты.ИдентификаторEBC КАК ИдентификаторEBC,
+	СправочникEBC_Чаты.СоставнойИдентификатор КАК СоставнойИдентификатор,
+	СправочникEBC_Чаты.НавигационнаяСсылка КАК НавигационнаяСсылка,
+	СправочникEBC_Чаты.ДатаПоследнегоСообщения КАК ДатаПоследнегоСообщения,
+	СправочникEBC_Чаты.ТекстПоследнегоСообщения КАК ТекстПоследнегоСообщения,
+	СправочникEBC_Чаты.ЕстьНепрочитанные КАК ЕстьНепрочитанные,
+	СправочникEBC_Чаты.Телефон КАК Телефон,
+	СправочникEBC_Чаты.ИмяПользователя КАК ИмяПользователя,
+	СправочникEBC_Чаты.Активен КАК Активен,
+	СправочникEBC_Чаты.ДатаСинхронизации КАК ДатаСинхронизации,
+	СправочникEBC_Чаты.ИмяПредопределенныхДанных КАК ИмяПредопределенныхДанных,
+	СправочникEBC_Чаты.Предопределенный КАК Предопределенный
+ИЗ
+	Справочник.EBC_Чаты КАК СправочникEBC_Чаты</QueryText>
+				<MainTable>Catalog.EBC_Чаты</MainTable>
+				<ListSettings/>
+			</Settings>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗагрузитьСписок" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить список</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uk</v8:lang>
+					<v8:content>Завантажити список</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить список</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uk</v8:lang>
+					<v8:content>Завантажити список</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗагрузитьСписок</Action>
+		</Command>
+		<Command name="УдалитьВыбранныеЧаты" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить выбранные чаты</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uk</v8:lang>
+					<v8:content>Видалити вибрані чати</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить выбранные чаты непосредственно</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uk</v8:lang>
+					<v8:content>Видалити вибрані чати безпосередньо</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>УдалитьВыбранныеЧаты</Action>
+		</Command>
+	</Commands>
+</Form>

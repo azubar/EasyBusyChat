@@ -1,0 +1,1125 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.16">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Привязанные чаты</v8:content>
+		</v8:item>
+		<v8:item>
+			<v8:lang>uk</v8:lang>
+			<v8:content>Прив'язані чати</v8:content>
+		</v8:item>
+	</Title>
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="КнопкаЗакрыть" id="1">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<ExtendedTooltip name="КнопкаЗакрытьРасширеннаяПодсказка" id="2"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаШапка" id="3">
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="4"/>
+			<ChildItems>
+				<InputField name="Контрагент" id="10">
+					<DataPath>Контрагент</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Контрагент</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uk</v8:lang>
+							<v8:content>Контрагент</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Left</TitleLocation>
+					<Width>30</Width>
+					<ContextMenu name="КонтрагентКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="КонтрагентРасширеннаяПодсказка" id="12"/>
+				</InputField>
+				<InputField name="ПредставлениеОбъекта" id="5">
+					<DataPath>ПредставлениеОбъекта</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Объект</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uk</v8:lang>
+							<v8:content>Об'єкт</v8:content>
+						</v8:item>
+					</Title>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ContextMenu name="ПредставлениеОбъектаКонтекстноеМеню" id="6"/>
+					<ExtendedTooltip name="ПредставлениеОбъектаРасширеннаяПодсказка" id="7"/>
+				</InputField>
+				<UsualGroup name="ГруппаОтборов" id="8">
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<United>false</United>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаОтборовРасширеннаяПодсказка" id="9"/>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаРежим" id="16">
+			<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<United>false</United>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаРежимРасширеннаяПодсказка" id="17"/>
+			<ChildItems>
+				<UsualGroup name="Группа1" id="118">
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="119"/>
+					<ChildItems>
+						<RadioButtonField name="РежимСписка" id="18">
+							<DataPath>РежимСписка</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<RadioButtonType>Tumbler</RadioButtonType>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Чаты</v8:content>
+											</v8:item>
+											<v8:item>
+												<v8:lang>uk</v8:lang>
+												<v8:content>Чати</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">0</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Привязанные чаты</v8:content>
+											</v8:item>
+											<v8:item>
+												<v8:lang>uk</v8:lang>
+												<v8:content>Прив'язані чати</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">1</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="РежимСпискаКонтекстноеМеню" id="19"/>
+							<ExtendedTooltip name="РежимСпискаРасширеннаяПодсказка" id="20"/>
+							<Events>
+								<Event name="OnChange">РежимСпискаПриИзменении</Event>
+							</Events>
+						</RadioButtonField>
+						<InputField name="ОтборПоУчетнойЗаписи" id="13">
+							<DataPath>ОтборПоУчетнойЗаписи</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Учётная запись</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>uk</v8:lang>
+									<v8:content>Обліковий запис</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Left</TitleLocation>
+							<ChoiceButton>true</ChoiceButton>
+							<ClearButton>true</ClearButton>
+							<InputHint>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>все учётные записи</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>uk</v8:lang>
+									<v8:content>усі облікові записи</v8:content>
+								</v8:item>
+							</InputHint>
+							<ContextMenu name="ОтборПоУчетнойЗаписиКонтекстноеМеню" id="14"/>
+							<ExtendedTooltip name="ОтборПоУчетнойЗаписиРасширеннаяПодсказка" id="15"/>
+							<Events>
+								<Event name="OnChange">ОтборПоУчетнойЗаписиПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="СтрокаПоиска" id="21">
+							<DataPath>СтрокаПоиска</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>uk</v8:lang>
+									<v8:content>Пошук</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Поиск</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Left</TitleLocation>
+							<HorizontalAlign>Left</HorizontalAlign>
+							<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<AutoMaxHeight>false</AutoMaxHeight>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Wrap>false</Wrap>
+							<ClearButton>true</ClearButton>
+							<InputHint>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Поиск по наименованию, телефону, сообщению…</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>uk</v8:lang>
+									<v8:content>Пошук за найменуванням, телефоном, повідомленням…</v8:content>
+								</v8:item>
+							</InputHint>
+							<ContextMenu name="СтрокаПоискаКонтекстноеМеню" id="22"/>
+							<ExtendedTooltip name="СтрокаПоискаРасширеннаяПодсказка" id="23"/>
+							<Events>
+								<Event name="OnChange">СтрокаПоискаПриИзменении</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="СтраницыСписков" id="24">
+			<PagesRepresentation>None</PagesRepresentation>
+			<ExtendedTooltip name="СтраницыСписковРасширеннаяПодсказка" id="25"/>
+			<ChildItems>
+				<Page name="СтраницаЧатов" id="26">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница чатов</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаЧатовРасширеннаяПодсказка" id="27"/>
+					<ChildItems>
+						<CommandBar name="ПанельЧатов" id="28">
+							<ExtendedTooltip name="ПанельЧатовРасширеннаяПодсказка" id="29"/>
+							<ChildItems>
+								<Button name="КнопкаПривязать" id="30">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.Привязать</CommandName>
+									<ExtendedTooltip name="КнопкаПривязатьРасширеннаяПодсказка" id="31"/>
+								</Button>
+								<Button name="КнопкаПривязатьОсновным" id="32">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.ПривязатьОсновным</CommandName>
+									<ExtendedTooltip name="КнопкаПривязатьОсновнымРасширеннаяПодсказка" id="33"/>
+								</Button>
+								<Button name="КнопкаПривязатьИОткрыть" id="34">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.ПривязатьИОткрытьЧат</CommandName>
+									<ExtendedTooltip name="КнопкаПривязатьИОткрытьРасширеннаяПодсказка" id="35"/>
+								</Button>
+								<Button name="КнопкаСнятьОтборПоКонтрагенту" id="36">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.СнятьОтборПоКонтрагенту</CommandName>
+									<ExtendedTooltip name="КнопкаСнятьОтборПоКонтрагентуРасширеннаяПодсказка" id="37"/>
+								</Button>
+								<Button name="КнопкаОбновить" id="38">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.Обновить</CommandName>
+									<ExtendedTooltip name="КнопкаОбновитьРасширеннаяПодсказка" id="39"/>
+								</Button>
+							</ChildItems>
+						</CommandBar>
+						<Table name="ТаблицаЧатов" id="40">
+							<CommandBarLocation>None</CommandBarLocation>
+							<ReadOnly>true</ReadOnly>
+							<DataPath>ТаблицаЧатов</DataPath>
+							<SearchStringLocation>None</SearchStringLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ТаблицаЧатовКонтекстноеМеню" id="41"/>
+							<AutoCommandBar name="ТаблицаЧатовКоманднаяПанель" id="42"/>
+							<ExtendedTooltip name="ТаблицаЧатовРасширеннаяПодсказка" id="43"/>
+							<SearchStringAddition name="ТаблицаЧатовСтрокаПоиска" id="44">
+								<AdditionSource>
+									<Item>ТаблицаЧатов</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаЧатовСтрокаПоискаКонтекстноеМеню" id="45"/>
+								<ExtendedTooltip name="ТаблицаЧатовСтрокаПоискаРасширеннаяПодсказка" id="46"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ТаблицаЧатовСостояниеПросмотра" id="47">
+								<AdditionSource>
+									<Item>ТаблицаЧатов</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаЧатовСостояниеПросмотраКонтекстноеМеню" id="48"/>
+								<ExtendedTooltip name="ТаблицаЧатовСостояниеПросмотраРасширеннаяПодсказка" id="49"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ТаблицаЧатовУправлениеПоиском" id="50">
+								<AdditionSource>
+									<Item>ТаблицаЧатов</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаЧатовУправлениеПоискомКонтекстноеМеню" id="51"/>
+								<ExtendedTooltip name="ТаблицаЧатовУправлениеПоискомРасширеннаяПодсказка" id="52"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">ТаблицаЧатовВыбор</Event>
+							</Events>
+							<ChildItems>
+								<PictureField name="ТаблицаЧатовКартинкаПровайдера" id="53">
+									<DataPath>ТаблицаЧатов.КартинкаПровайдера</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<ShowInHeader>false</ShowInHeader>
+									<Width>2</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ValuesPicture>
+										<xr:Ref>CommonPicture.EBC_ПровайдерыЧатов</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</ValuesPicture>
+									<ContextMenu name="ТаблицаЧатовКартинкаПровайдераКонтекстноеМеню" id="54"/>
+									<ExtendedTooltip name="ТаблицаЧатовКартинкаПровайдераРасширеннаяПодсказка" id="55"/>
+								</PictureField>
+								<InputField name="ТаблицаЧатовСсылка" id="56">
+									<DataPath>ТаблицаЧатов.Ссылка</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Чат</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>uk</v8:lang>
+											<v8:content>Чат</v8:content>
+										</v8:item>
+									</Title>
+									<Width>24</Width>
+									<ContextMenu name="ТаблицаЧатовСсылкаКонтекстноеМеню" id="57"/>
+									<ExtendedTooltip name="ТаблицаЧатовСсылкаРасширеннаяПодсказка" id="58"/>
+								</InputField>
+								<InputField name="ТаблицаЧатовПредставлениеУчетнойЗаписи" id="59">
+									<DataPath>ТаблицаЧатов.ПредставлениеУчетнойЗаписи</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Учётная запись</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>uk</v8:lang>
+											<v8:content>Обліковий запис</v8:content>
+										</v8:item>
+									</Title>
+									<Width>26</Width>
+									<ContextMenu name="ТаблицаЧатовПредставлениеУчетнойЗаписиКонтекстноеМеню" id="60"/>
+									<ExtendedTooltip name="ТаблицаЧатовПредставлениеУчетнойЗаписиРасширеннаяПодсказка" id="61"/>
+								</InputField>
+								<InputField name="ТаблицаЧатовТелефон" id="62">
+									<DataPath>ТаблицаЧатов.Телефон</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Телефон</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>uk</v8:lang>
+											<v8:content>Телефон</v8:content>
+										</v8:item>
+									</Title>
+									<Width>14</Width>
+									<ContextMenu name="ТаблицаЧатовТелефонКонтекстноеМеню" id="63"/>
+									<ExtendedTooltip name="ТаблицаЧатовТелефонРасширеннаяПодсказка" id="64"/>
+								</InputField>
+								<InputField name="ТаблицаЧатовДатаПоследнегоСообщения" id="65">
+									<DataPath>ТаблицаЧатов.ДатаПоследнегоСообщения</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Последнее</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>uk</v8:lang>
+											<v8:content>Останнє</v8:content>
+										</v8:item>
+									</Title>
+									<Width>15</Width>
+									<ContextMenu name="ТаблицаЧатовДатаПоследнегоСообщенияКонтекстноеМеню" id="66"/>
+									<ExtendedTooltip name="ТаблицаЧатовДатаПоследнегоСообщенияРасширеннаяПодсказка" id="67"/>
+								</InputField>
+								<InputField name="ТаблицаЧатовТекстПоследнегоСообщения" id="68">
+									<DataPath>ТаблицаЧатов.ТекстПоследнегоСообщения</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Текст последнего сообщения</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>uk</v8:lang>
+											<v8:content>Текст останнього повідомлення</v8:content>
+										</v8:item>
+									</Title>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
+									<ContextMenu name="ТаблицаЧатовТекстПоследнегоСообщенияКонтекстноеМеню" id="69"/>
+									<ExtendedTooltip name="ТаблицаЧатовТекстПоследнегоСообщенияРасширеннаяПодсказка" id="70"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаПривязанных" id="71">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница привязанных</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаПривязанныхРасширеннаяПодсказка" id="72"/>
+					<ChildItems>
+						<CommandBar name="ПанельПривязанных" id="73">
+							<ExtendedTooltip name="ПанельПривязанныхРасширеннаяПодсказка" id="74"/>
+							<ChildItems>
+								<Button name="КнопкаОткрытьЧат" id="75">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.ОткрытьЧат</CommandName>
+									<ExtendedTooltip name="КнопкаОткрытьЧатРасширеннаяПодсказка" id="76"/>
+								</Button>
+								<Button name="КнопкаСделатьОсновным" id="77">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.СделатьОсновным</CommandName>
+									<ExtendedTooltip name="КнопкаСделатьОсновнымРасширеннаяПодсказка" id="78"/>
+								</Button>
+								<Button name="КнопкаОтвязать" id="79">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.Отвязать</CommandName>
+									<ExtendedTooltip name="КнопкаОтвязатьРасширеннаяПодсказка" id="80"/>
+								</Button>
+							</ChildItems>
+						</CommandBar>
+						<Table name="ТаблицаПривязанных" id="81">
+							<CommandBarLocation>None</CommandBarLocation>
+							<ReadOnly>true</ReadOnly>
+							<DataPath>ТаблицаПривязанных</DataPath>
+							<SearchStringLocation>None</SearchStringLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ТаблицаПривязанныхКонтекстноеМеню" id="82"/>
+							<AutoCommandBar name="ТаблицаПривязанныхКоманднаяПанель" id="83"/>
+							<ExtendedTooltip name="ТаблицаПривязанныхРасширеннаяПодсказка" id="84"/>
+							<SearchStringAddition name="ТаблицаПривязанныхСтрокаПоиска" id="85">
+								<AdditionSource>
+									<Item>ТаблицаПривязанных</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаПривязанныхСтрокаПоискаКонтекстноеМеню" id="86"/>
+								<ExtendedTooltip name="ТаблицаПривязанныхСтрокаПоискаРасширеннаяПодсказка" id="87"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ТаблицаПривязанныхСостояниеПросмотра" id="88">
+								<AdditionSource>
+									<Item>ТаблицаПривязанных</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаПривязанныхСостояниеПросмотраКонтекстноеМеню" id="89"/>
+								<ExtendedTooltip name="ТаблицаПривязанныхСостояниеПросмотраРасширеннаяПодсказка" id="90"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ТаблицаПривязанныхУправлениеПоиском" id="91">
+								<AdditionSource>
+									<Item>ТаблицаПривязанных</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаПривязанныхУправлениеПоискомКонтекстноеМеню" id="92"/>
+								<ExtendedTooltip name="ТаблицаПривязанныхУправлениеПоискомРасширеннаяПодсказка" id="93"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">ТаблицаПривязанныхВыбор</Event>
+							</Events>
+							<ChildItems>
+								<PictureField name="ТаблицаПривязанныхКартинкаПровайдера" id="94">
+									<DataPath>ТаблицаПривязанных.КартинкаПровайдера</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<ShowInHeader>false</ShowInHeader>
+									<Width>2</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ValuesPicture>
+										<xr:Ref>CommonPicture.EBC_ПровайдерыЧатов</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</ValuesPicture>
+									<ContextMenu name="ТаблицаПривязанныхКартинкаПровайдераКонтекстноеМеню" id="95"/>
+									<ExtendedTooltip name="ТаблицаПривязанныхКартинкаПровайдераРасширеннаяПодсказка" id="96"/>
+								</PictureField>
+								<CheckBoxField name="ТаблицаПривязанныхОсновнаяСвязь" id="97">
+									<DataPath>ТаблицаПривязанных.ОсновнаяСвязь</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Осн.</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>uk</v8:lang>
+											<v8:content>Осн.</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ТаблицаПривязанныхОсновнаяСвязьКонтекстноеМеню" id="98"/>
+									<ExtendedTooltip name="ТаблицаПривязанныхОсновнаяСвязьРасширеннаяПодсказка" id="99"/>
+								</CheckBoxField>
+								<InputField name="ТаблицаПривязанныхСсылка" id="100">
+									<DataPath>ТаблицаПривязанных.Ссылка</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Чат</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>uk</v8:lang>
+											<v8:content>Чат</v8:content>
+										</v8:item>
+									</Title>
+									<Width>24</Width>
+									<ContextMenu name="ТаблицаПривязанныхСсылкаКонтекстноеМеню" id="101"/>
+									<ExtendedTooltip name="ТаблицаПривязанныхСсылкаРасширеннаяПодсказка" id="102"/>
+								</InputField>
+								<InputField name="ТаблицаПривязанныхПредставлениеУчетнойЗаписи" id="103">
+									<DataPath>ТаблицаПривязанных.ПредставлениеУчетнойЗаписи</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Учётная запись</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>uk</v8:lang>
+											<v8:content>Обліковий запис</v8:content>
+										</v8:item>
+									</Title>
+									<Width>26</Width>
+									<ContextMenu name="ТаблицаПривязанныхПредставлениеУчетнойЗаписиКонтекстноеМеню" id="104"/>
+									<ExtendedTooltip name="ТаблицаПривязанныхПредставлениеУчетнойЗаписиРасширеннаяПодсказка" id="105"/>
+								</InputField>
+								<InputField name="ТаблицаПривязанныхТелефон" id="106">
+									<DataPath>ТаблицаПривязанных.Телефон</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Телефон</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>uk</v8:lang>
+											<v8:content>Телефон</v8:content>
+										</v8:item>
+									</Title>
+									<Width>14</Width>
+									<ContextMenu name="ТаблицаПривязанныхТелефонКонтекстноеМеню" id="107"/>
+									<ExtendedTooltip name="ТаблицаПривязанныхТелефонРасширеннаяПодсказка" id="108"/>
+								</InputField>
+								<InputField name="ТаблицаПривязанныхДатаУстановки" id="109">
+									<DataPath>ТаблицаПривязанных.ДатаУстановки</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Привязан</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>uk</v8:lang>
+											<v8:content>Прив'язано</v8:content>
+										</v8:item>
+									</Title>
+									<Width>15</Width>
+									<ContextMenu name="ТаблицаПривязанныхДатаУстановкиКонтекстноеМеню" id="110"/>
+									<ExtendedTooltip name="ТаблицаПривязанныхДатаУстановкиРасширеннаяПодсказка" id="111"/>
+								</InputField>
+								<InputField name="ТаблицаПривязанныхДатаПоследнегоСообщения" id="112">
+									<DataPath>ТаблицаПривязанных.ДатаПоследнегоСообщения</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Последнее</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>uk</v8:lang>
+											<v8:content>Останнє</v8:content>
+										</v8:item>
+									</Title>
+									<Width>15</Width>
+									<ContextMenu name="ТаблицаПривязанныхДатаПоследнегоСообщенияКонтекстноеМеню" id="113"/>
+									<ExtendedTooltip name="ТаблицаПривязанныхДатаПоследнегоСообщенияРасширеннаяПодсказка" id="114"/>
+								</InputField>
+								<InputField name="ТаблицаПривязанныхТекстПоследнегоСообщения" id="115">
+									<DataPath>ТаблицаПривязанных.ТекстПоследнегоСообщения</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Текст последнего сообщения</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>uk</v8:lang>
+											<v8:content>Текст останнього повідомлення</v8:content>
+										</v8:item>
+									</Title>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
+									<ContextMenu name="ТаблицаПривязанныхТекстПоследнегоСообщенияКонтекстноеМеню" id="116"/>
+									<ExtendedTooltip name="ТаблицаПривязанныхТекстПоследнегоСообщенияРасширеннаяПодсказка" id="117"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="118">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.EBC_КонтактЦентр</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ОбъектСсылка" id="119">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объект ссылка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="ПредставлениеОбъекта" id="120">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Представление объекта</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>250</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Контрагент" id="121">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контрагент</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="РежимВыбора" id="157">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Режим выбора</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЕстьРеквизитКонтрагент" id="122">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Есть реквизит контрагент</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтборПоУчетнойЗаписи" id="123">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отбор по учетной записи</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.EBC_УчетныеЗаписи</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СтрокаПоиска" id="124">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Строка поиска</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="РежимСписка" id="125">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Режим списка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>1</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КоличествоПривязанных" id="126">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество привязанных</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>5</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТаблицаЧатов" id="127">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица чатов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Ссылка" id="128">
+					<Type>
+						<v8:Type>cfg:CatalogRef.EBC_Чаты</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Наименование" id="129">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>150</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Телефон" id="130">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>20</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ДатаПоследнегоСообщения" id="131">
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ТекстПоследнегоСообщения" id="132">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>500</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="УчетнаяЗапись" id="133">
+					<Type>
+						<v8:Type>cfg:CatalogRef.EBC_УчетныеЗаписи</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ПредставлениеУчетнойЗаписи" id="134">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>200</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Провайдер" id="135">
+					<Type>
+						<v8:Type>cfg:EnumRef.EBC_Провайдеры</v8:Type>
+					</Type>
+				</Column>
+				<Column name="КартинкаПровайдера" id="136">
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>2</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЧатКонтрагента" id="158">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ТаблицаПривязанных" id="137">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица привязанных</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Ссылка" id="138">
+					<Type>
+						<v8:Type>cfg:CatalogRef.EBC_Чаты</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Наименование" id="139">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>150</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Телефон" id="140">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>20</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ДатаПоследнегоСообщения" id="141">
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ТекстПоследнегоСообщения" id="142">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>500</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="УчетнаяЗапись" id="143">
+					<Type>
+						<v8:Type>cfg:CatalogRef.EBC_УчетныеЗаписи</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ПредставлениеУчетнойЗаписи" id="144">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>200</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Провайдер" id="145">
+					<Type>
+						<v8:Type>cfg:EnumRef.EBC_Провайдеры</v8:Type>
+					</Type>
+				</Column>
+				<Column name="КартинкаПровайдера" id="146">
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>2</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОсновнаяСвязь" id="147">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ДатаУстановки" id="148">
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Привязать" id="149">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Связать</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uk</v8:lang>
+					<v8:content>Зв'язати</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Привязать выбранный чат к объекту</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uk</v8:lang>
+					<v8:content>Прив'язати вибраний чат до об'єкта</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.EBC_Связать</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПривязатьНажатие</Action>
+		</Command>
+		<Command name="ПривязатьОсновным" id="150">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основной</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uk</v8:lang>
+					<v8:content>Основний</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Привязать выбранный чат и сделать его основным для объекта</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uk</v8:lang>
+					<v8:content>Прив'язати вибраний чат і зробити його основним для об'єкта</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.EBC_СвязатьОсн</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПривязатьОсновнымНажатие</Action>
+		</Command>
+		<Command name="ПривязатьИОткрытьЧат" id="151">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Связать и открыть</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uk</v8:lang>
+					<v8:content>Зв'язати і відкрити</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Привязать выбранный чат к объекту и открыть его в Easy-Busy Chat</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uk</v8:lang>
+					<v8:content>Прив'язати вибраний чат до об'єкта і відкрити його в Easy-Busy Chat</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.EBC_Чаты</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПривязатьИОткрытьЧатНажатие</Action>
+		</Command>
+		<Command name="СнятьОтборПоКонтрагенту" id="152">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Все чаты</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uk</v8:lang>
+					<v8:content>Усі чати</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать все чаты, а не только чаты контрагента</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uk</v8:lang>
+					<v8:content>Показати всі чати, а не лише чати контрагента</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СнятьОтборПоКонтрагентуНажатие</Action>
+		</Command>
+		<Command name="Обновить" id="153">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uk</v8:lang>
+					<v8:content>Оновити</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перечитать список чатов</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uk</v8:lang>
+					<v8:content>Перечитати список чатів</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.EBC_Обновить</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОбновитьНажатие</Action>
+		</Command>
+		<Command name="ОткрытьЧат" id="154">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть чат</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uk</v8:lang>
+					<v8:content>Відкрити чат</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть выбранный чат в Easy-Busy Chat</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uk</v8:lang>
+					<v8:content>Відкрити вибраний чат в Easy-Busy Chat</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.EBC_Чаты</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОткрытьЧатНажатие</Action>
+		</Command>
+		<Command name="СделатьОсновным" id="155">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основной</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uk</v8:lang>
+					<v8:content>Основний</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сделать выбранный чат основным для объекта</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uk</v8:lang>
+					<v8:content>Зробити вибраний чат основним для об'єкта</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.EBC_СвязатьОсн</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СделатьОсновнымНажатие</Action>
+		</Command>
+		<Command name="Отвязать" id="156">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отвязать</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uk</v8:lang>
+					<v8:content>Відв'язати</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отвязать выбранный чат от объекта</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uk</v8:lang>
+					<v8:content>Відв'язати вибраний чат від об'єкта</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.EBC_Отвязать</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОтвязатьНажатие</Action>
+		</Command>
+	</Commands>
+</Form>

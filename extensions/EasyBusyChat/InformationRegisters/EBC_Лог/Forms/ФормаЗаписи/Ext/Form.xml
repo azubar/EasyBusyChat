@@ -1,0 +1,538 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.16">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>@{ru=Запись журнала Easy Busy Chat; uk=Запис журналу Easy Busy Chat}</v8:content>
+		</v8:item>
+	</Title>
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<ChildItems>
+		<Pages name="СтраницыЗаписи" id="56">
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="СтраницыЗаписиРасширеннаяПодсказка" id="57"/>
+			<ChildItems>
+				<Page name="СтраницаСобытие" id="58">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Событие</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uk</v8:lang>
+							<v8:content>Подія</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СобытиеРасширеннаяПодсказка" id="59"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаСводка" id="60">
+							<Group>Horizontal</Group>
+							<Behavior>Usual</Behavior>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаСводкаРасширеннаяПодсказка" id="61"/>
+							<ChildItems>
+								<InputField name="ДатаНачала" id="62">
+									<DataPath>Запись.ДатаНачала</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Дата записи</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>uk</v8:lang>
+											<v8:content>Дата запису</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДатаНачалаКонтекстноеМеню" id="63"/>
+									<ExtendedTooltip name="ДатаНачалаРасширеннаяПодсказка" id="64"/>
+								</InputField>
+								<InputField name="Уровень" id="65">
+									<DataPath>Запись.Уровень</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Уровень</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>uk</v8:lang>
+											<v8:content>Рівень</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="УровеньКонтекстноеМеню" id="66"/>
+									<ExtendedTooltip name="УровеньРасширеннаяПодсказка" id="67"/>
+								</InputField>
+								<InputField name="Категория" id="140">
+									<DataPath>Запись.Категория</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<ContextMenu name="КатегорияКонтекстноеМеню" id="141"/>
+									<ExtendedTooltip name="КатегорияРасширеннаяПодсказка" id="142"/>
+								</InputField>
+								<InputField name="РезультатДействия" id="143">
+									<DataPath>Запись.РезультатДействия</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<ContextMenu name="РезультатДействияКонтекстноеМеню" id="144"/>
+									<ExtendedTooltip name="РезультатДействияРасширеннаяПодсказка" id="145"/>
+								</InputField>
+								<InputField name="СтатусКод" id="68">
+									<DataPath>Запись.СтатусКод</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>HTTP-код</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>uk</v8:lang>
+											<v8:content>HTTP-код</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="СтатусКодКонтекстноеМеню" id="69"/>
+									<ExtendedTooltip name="СтатусКодРасширеннаяПодсказка" id="70"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаМаршрут" id="71">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Запрос к API</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>uk</v8:lang>
+									<v8:content>Запит до API</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<Behavior>Usual</Behavior>
+							<ExtendedTooltip name="ГруппаМаршрутРасширеннаяПодсказка" id="72"/>
+							<ChildItems>
+								<InputField name="Метод" id="73">
+									<DataPath>Запись.Метод</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Метод</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>uk</v8:lang>
+											<v8:content>Метод</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="МетодКонтекстноеМеню" id="74"/>
+									<ExtendedTooltip name="МетодРасширеннаяПодсказка" id="75"/>
+								</InputField>
+								<InputField name="Путь" id="76">
+									<DataPath>Запись.Путь</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Путь</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>uk</v8:lang>
+											<v8:content>Шлях</v8:content>
+										</v8:item>
+									</Title>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="ПутьКонтекстноеМеню" id="77"/>
+									<ExtendedTooltip name="ПутьРасширеннаяПодсказка" id="78"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаКонтекст" id="79">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Контекст интеграции</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>uk</v8:lang>
+									<v8:content>Контекст інтеграції</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<Behavior>Usual</Behavior>
+							<ExtendedTooltip name="ГруппаКонтекстРасширеннаяПодсказка" id="80"/>
+							<ChildItems>
+								<InputField name="ПользовательИБ" id="81">
+									<DataPath>Запись.ПользовательИБ</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Пользователь ИБ</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>uk</v8:lang>
+											<v8:content>Користувач ІБ</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ПользовательИБКонтекстноеМеню" id="82"/>
+									<ExtendedTooltip name="ПользовательИБРасширеннаяПодсказка" id="83"/>
+								</InputField>
+								<InputField name="Чат" id="146">
+									<DataPath>Запись.Чат</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<ContextMenu name="ЧатКонтекстноеМеню" id="147"/>
+									<ExtendedTooltip name="ЧатРасширеннаяПодсказка" id="148"/>
+								</InputField>
+								<InputField name="ПредставлениеЧата" id="149">
+									<DataPath>Запись.ПредставлениеЧата</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<ContextMenu name="ПредставлениеЧатаКонтекстноеМеню" id="150"/>
+									<ExtendedTooltip name="ПредставлениеЧатаРасширеннаяПодсказка" id="151"/>
+								</InputField>
+								<InputField name="ИдентификаторЧатаEBC" id="158">
+									<DataPath>Запись.ИдентификаторЧатаEBC</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<ContextMenu name="ИдентификаторЧатаEBCКонтекстноеМеню" id="159"/>
+									<ExtendedTooltip name="ИдентификаторЧатаEBCРасширеннаяПодсказка" id="160"/>
+								</InputField>
+								<InputField name="ТипОбъекта" id="152">
+									<DataPath>Запись.ТипОбъекта</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<ContextMenu name="ТипОбъектаКонтекстноеМеню" id="153"/>
+									<ExtendedTooltip name="ТипОбъектаРасширеннаяПодсказка" id="154"/>
+								</InputField>
+								<InputField name="ПредставлениеОбъекта" id="155">
+									<DataPath>Запись.ПредставлениеОбъекта</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<ContextMenu name="ПредставлениеОбъектаКонтекстноеМеню" id="156"/>
+									<ExtendedTooltip name="ПредставлениеОбъектаРасширеннаяПодсказка" id="157"/>
+								</InputField>
+								<InputField name="ИдентификаторОбъекта" id="161">
+									<DataPath>Запись.ИдентификаторОбъекта</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<ContextMenu name="ИдентификаторОбъектаКонтекстноеМеню" id="162"/>
+									<ExtendedTooltip name="ИдентификаторОбъектаРасширеннаяПодсказка" id="163"/>
+								</InputField>
+								<InputField name="НавигационнаяСсылкаОбъекта" id="164">
+									<DataPath>Запись.НавигационнаяСсылкаОбъекта</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<ContextMenu name="НавигационнаяСсылкаОбъектаКонтекстноеМеню" id="165"/>
+									<ExtendedTooltip name="НавигационнаяСсылкаОбъектаРасширеннаяПодсказка" id="166"/>
+								</InputField>
+								<InputField name="Компания" id="87">
+									<DataPath>Запись.Компания</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Компания</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>uk</v8:lang>
+											<v8:content>Компанія</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="КомпанияКонтекстноеМеню" id="88"/>
+									<ExtendedTooltip name="КомпанияРасширеннаяПодсказка" id="89"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаОшибка" id="90">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ошибка</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>uk</v8:lang>
+									<v8:content>Помилка</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<ExtendedTooltip name="ГруппаОшибкаРасширеннаяПодсказка" id="91"/>
+							<ChildItems>
+								<InputField name="КодОшибки" id="92">
+									<DataPath>Запись.КодОшибки</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Код ошибки</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>uk</v8:lang>
+											<v8:content>Код помилки</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="КодОшибкиКонтекстноеМеню" id="93"/>
+									<ExtendedTooltip name="КодОшибкиРасширеннаяПодсказка" id="94"/>
+								</InputField>
+								<InputField name="ТекстОшибки" id="95">
+									<DataPath>Запись.ТекстОшибки</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Текст ошибки</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>uk</v8:lang>
+											<v8:content>Текст помилки</v8:content>
+										</v8:item>
+									</Title>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Height>4</Height>
+									<MultiLine>true</MultiLine>
+									<ContextMenu name="ТекстОшибкиКонтекстноеМеню" id="96"/>
+									<ExtendedTooltip name="ТекстОшибкиРасширеннаяПодсказка" id="97"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="ЗапросИОтвет" id="98">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Запрос и ответ</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uk</v8:lang>
+							<v8:content>Запит і відповідь</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ЗапросИОтветРасширеннаяПодсказка" id="99"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаДанныеЗапроса" id="100">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Данные запроса</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>uk</v8:lang>
+									<v8:content>Дані запиту</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<ExtendedTooltip name="ГруппаДанныеЗапросаРасширеннаяПодсказка" id="101"/>
+							<ChildItems>
+								<InputField name="Событие" id="102">
+									<DataPath>Запись.Событие</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Событие</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>uk</v8:lang>
+											<v8:content>Подія</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="СобытиеКонтекстноеМеню" id="103"/>
+									<ExtendedTooltip name="СобытиеРасширеннаяПодсказка" id="104"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаДанныеОтвета" id="105">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Данные ответа</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>uk</v8:lang>
+									<v8:content>Дані відповіді</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<ExtendedTooltip name="ГруппаДанныеОтветаРасширеннаяПодсказка" id="106"/>
+							<ChildItems>
+								<InputField name="Детали" id="107">
+									<DataPath>Запись.Детали</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Детали</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>uk</v8:lang>
+											<v8:content>Деталі</v8:content>
+										</v8:item>
+									</Title>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Height>8</Height>
+									<MultiLine>true</MultiLine>
+									<ContextMenu name="ДеталиКонтекстноеМеню" id="108"/>
+									<ExtendedTooltip name="ДеталиРасширеннаяПодсказка" id="109"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="ТехническиеДанные" id="110">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Технические данные</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uk</v8:lang>
+							<v8:content>Технічні дані</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ТехническиеДанныеРасширеннаяПодсказка" id="111"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаПроизводительность" id="112">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Производительность</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>uk</v8:lang>
+									<v8:content>Продуктивність</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<Behavior>Usual</Behavior>
+							<ExtendedTooltip name="ГруппаПроизводительностьРасширеннаяПодсказка" id="113"/>
+							<ChildItems>
+								<InputField name="ДлительностьМс" id="114">
+									<DataPath>Запись.ДлительностьМс</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Длительность, мс</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>uk</v8:lang>
+											<v8:content>Тривалість, мс</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДлительностьМсКонтекстноеМеню" id="115"/>
+									<ExtendedTooltip name="ДлительностьМсРасширеннаяПодсказка" id="116"/>
+								</InputField>
+								<InputField name="КоличествоПопыток" id="117">
+									<DataPath>Запись.КоличествоПопыток</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Попыток</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>uk</v8:lang>
+											<v8:content>Спроб</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="КоличествоПопытокКонтекстноеМеню" id="118"/>
+									<ExtendedTooltip name="КоличествоПопытокРасширеннаяПодсказка" id="119"/>
+								</InputField>
+								<InputField name="РазмерЗапроса" id="120">
+									<DataPath>Запись.РазмерЗапроса</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Запрос, байт</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>uk</v8:lang>
+											<v8:content>Запит, байт</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="РазмерЗапросаКонтекстноеМеню" id="121"/>
+									<ExtendedTooltip name="РазмерЗапросаРасширеннаяПодсказка" id="122"/>
+								</InputField>
+								<InputField name="РазмерОтвета" id="123">
+									<DataPath>Запись.РазмерОтвета</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Ответ, байт</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>uk</v8:lang>
+											<v8:content>Відповідь, байт</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="РазмерОтветаКонтекстноеМеню" id="124"/>
+									<ExtendedTooltip name="РазмерОтветаРасширеннаяПодсказка" id="125"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаИдентификация" id="126">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Идентификация</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>uk</v8:lang>
+									<v8:content>Ідентифікація</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<ExtendedTooltip name="ГруппаИдентификацияРасширеннаяПодсказка" id="127"/>
+							<ChildItems>
+								<InputField name="КорреляционныйИдентификатор" id="128">
+									<DataPath>Запись.КорреляционныйИдентификатор</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Корреляционный идентификатор</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>uk</v8:lang>
+											<v8:content>Ідентифікатор кореляції</v8:content>
+										</v8:item>
+									</Title>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="КорреляционныйИдентификаторКонтекстноеМеню" id="129"/>
+									<ExtendedTooltip name="КорреляционныйИдентификаторРасширеннаяПодсказка" id="130"/>
+								</InputField>
+								<InputField name="ИдентификаторЗаписи" id="131">
+									<DataPath>Запись.ИдентификаторЗаписи</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Идентификатор записи</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>uk</v8:lang>
+											<v8:content>Ідентифікатор запису</v8:content>
+										</v8:item>
+									</Title>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="ИдентификаторЗаписиКонтекстноеМеню" id="132"/>
+									<ExtendedTooltip name="ИдентификаторЗаписиРасширеннаяПодсказка" id="133"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Запись" id="134">
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordManager.EBC_Лог</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

@@ -1,0 +1,6 @@
+[[permission]]
+identifier = "allow-get-config"
+description = "Allows invoking the get_config command"
+commands.allow = [
+    "get_config"
+]

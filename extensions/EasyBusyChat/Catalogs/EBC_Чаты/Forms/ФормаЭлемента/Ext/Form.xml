@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.16">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Чат (EBC)</v8:content>
+		</v8:item>
+		<v8:item>
+			<v8:lang>uk</v8:lang>
+			<v8:content>Чат (EBC)</v8:content>
+		</v8:item>
+	</Title>
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<UsualGroup name="ГруппаЧат" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Чат</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uk</v8:lang>
+					<v8:content>Чат</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<ExtendedTooltip name="ГруппаЧатРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<InputField name="Наименование" id="3">
+					<DataPath>Объект.Description</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uk</v8:lang>
+							<v8:content>Найменування</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="4"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="5"/>
+				</InputField>
+				<InputField name="Владелец" id="6">
+					<DataPath>Объект.Owner</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Учетная запись</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uk</v8:lang>
+							<v8:content>Обліковий запис</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ВладелецКонтекстноеМеню" id="7"/>
+					<ExtendedTooltip name="ВладелецРасширеннаяПодсказка" id="8"/>
+				</InputField>
+				<InputField name="ТипЧата" id="9">
+					<DataPath>Объект.ТипЧата</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<ContextMenu name="ТипЧатаКонтекстноеМеню" id="10"/>
+					<ExtendedTooltip name="ТипЧатаРасширеннаяПодсказка" id="11"/>
+				</InputField>
+				<InputField name="ИмяПользователя" id="12">
+					<DataPath>Объект.ИмяПользователя</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя пользователя в сервисе</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uk</v8:lang>
+							<v8:content>Ім'я користувача в сервісі</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ИмяПользователяКонтекстноеМеню" id="13"/>
+					<ExtendedTooltip name="ИмяПользователяРасширеннаяПодсказка" id="14"/>
+				</InputField>
+				<InputField name="Телефон" id="15">
+					<DataPath>Объект.Телефон</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<ContextMenu name="ТелефонКонтекстноеМеню" id="16"/>
+					<ExtendedTooltip name="ТелефонРасширеннаяПодсказка" id="17"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="СтраницыЧата" id="18">
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="СтраницыЧатаРасширеннаяПодсказка" id="19"/>
+			<ChildItems>
+				<Page name="ГруппаСостояние" id="20">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Состояние</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uk</v8:lang>
+							<v8:content>Стан</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаСостояниеРасширеннаяПодсказка" id="21"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаПризнаки" id="22">
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<United>false</United>
+							<ExtendedTooltip name="ГруппаПризнакиРасширеннаяПодсказка" id="23"/>
+							<ChildItems>
+								<CheckBoxField name="Активен" id="24">
+									<DataPath>Объект.Активен</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="АктивенКонтекстноеМеню" id="25"/>
+									<ExtendedTooltip name="АктивенРасширеннаяПодсказка" id="26"/>
+								</CheckBoxField>
+								<CheckBoxField name="ЕстьНепрочитанные" id="27">
+									<DataPath>Объект.ЕстьНепрочитанные</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ЕстьНепрочитанныеКонтекстноеМеню" id="28"/>
+									<ExtendedTooltip name="ЕстьНепрочитанныеРасширеннаяПодсказка" id="29"/>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="ДатаПоследнегоСообщения" id="30">
+							<DataPath>Объект.ДатаПоследнегоСообщения</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<ContextMenu name="ДатаПоследнегоСообщенияКонтекстноеМеню" id="31"/>
+							<ExtendedTooltip name="ДатаПоследнегоСообщенияРасширеннаяПодсказка" id="32"/>
+						</InputField>
+						<InputField name="ТекстПоследнегоСообщения" id="33">
+							<DataPath>Объект.ТекстПоследнегоСообщения</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Последнее сообщение</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>uk</v8:lang>
+									<v8:content>Останнє повідомлення</v8:content>
+								</v8:item>
+							</Title>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Height>4</Height>
+							<HorizontalStretch>true</HorizontalStretch>
+							<MultiLine>true</MultiLine>
+							<ContextMenu name="ТекстПоследнегоСообщенияКонтекстноеМеню" id="34"/>
+							<ExtendedTooltip name="ТекстПоследнегоСообщенияРасширеннаяПодсказка" id="35"/>
+						</InputField>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаСлужебное" id="36">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Служебные данные</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uk</v8:lang>
+							<v8:content>Службові дані</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаСлужебноеРасширеннаяПодсказка" id="37"/>
+					<ChildItems>
+						<InputField name="ИдентификаторEBC" id="38">
+							<DataPath>Объект.ИдентификаторEBC</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="ИдентификаторEBCКонтекстноеМеню" id="39"/>
+							<ExtendedTooltip name="ИдентификаторEBCРасширеннаяПодсказка" id="40"/>
+						</InputField>
+						<InputField name="СоставнойИдентификатор" id="41">
+							<DataPath>Объект.СоставнойИдентификатор</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="СоставнойИдентификаторКонтекстноеМеню" id="42"/>
+							<ExtendedTooltip name="СоставнойИдентификаторРасширеннаяПодсказка" id="43"/>
+						</InputField>
+						<InputField name="НавигационнаяСсылка" id="44">
+							<DataPath>Объект.НавигационнаяСсылка</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="НавигационнаяСсылкаКонтекстноеМеню" id="45"/>
+							<ExtendedTooltip name="НавигационнаяСсылкаРасширеннаяПодсказка" id="46"/>
+						</InputField>
+						<UsualGroup name="ГруппаКодДата" id="47">
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<United>false</United>
+							<ExtendedTooltip name="ГруппаКодДатаРасширеннаяПодсказка" id="48"/>
+							<ChildItems>
+								<InputField name="Код" id="49">
+									<DataPath>Объект.Code</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<ContextMenu name="КодКонтекстноеМеню" id="50"/>
+									<ExtendedTooltip name="КодРасширеннаяПодсказка" id="51"/>
+								</InputField>
+								<InputField name="ДатаСинхронизации" id="52">
+									<DataPath>Объект.ДатаСинхронизации</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<ContextMenu name="ДатаСинхронизацииКонтекстноеМеню" id="53"/>
+									<ExtendedTooltip name="ДатаСинхронизацииРасширеннаяПодсказка" id="54"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="55">
+			<Type>
+				<v8:Type>cfg:CatalogObject.EBC_Чаты</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

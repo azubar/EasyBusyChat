@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chats Demo | EasyBusy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200..700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --clr-white: #FFFFFF;
+            --clr-black: #000000;
+            --clr-green-50: #121C21;
+            --clr-green-40: #084545;
+            --clr-green-30: #0F8A75;
+            --clr-green-20: #85E0C2;
+            --clr-green-10: #B8E0CC;
+            --clr-yellow-30: #F0DA75;
+            --clr-yellow-20: #F5E8D6;
+            --clr-yellow-10: #F7F2ED;
+            --clr-blue-30: #2662D9;
+            --clr-blue-20: #B8C5E0;
+            --clr-blue-10: #DEE3ED;
+            --clr-red-30: #E1515D;
+            --clr-red-20: #E0B8B8;
+            --clr-red-10: #F5F0F0;
+            --clr-black-30: #171A1B;
+            --clr-black-25: #111B20;
+            --clr-black-20: #1B2122;
+            --clr-black-10: #2B383B;
+
+            --eb-color-primary: var(--clr-green-30);
+            --eb-color-secondary: var(--clr-yellow-30);
+            --eb-bg: var(--clr-yellow-10);
+            --eb-header-bg-color: var(--clr-white);
+            --eb-header-text-color: var(--clr-black-30);
+            --eb-footer-bg-color: var(--clr-green-40);
+            --eb-footer-text-color: var(--clr-white);
+            --eb-chat-body-bg-color: var(--clr-white);
+            --eb-chat-body-text-color: var(--clr-black-30);
+            --eb-container-width: 1200px;
+            --eb-container-padding: 1rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            min-height: 100svh;
+            font-family: "Inter", sans-serif;
+        }
+
+        .btn {
+            font-family: inherit;
+            font-size: inherit;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: inherit;
+            background-color: transparent;
+            appearance: none;
+            text-decoration: none;
+            border: 1px solid transparent;
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+            transition: all .3s ease;
+            width: fit-content;
+            gap: .5rem;
+        }
+
+        .btn--primary {
+            padding: 16px 20px;
+            border-radius: 16px;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1;
+
+            background-color: var(--eb-color-primary);
+            border: 1px solid var(--color-primary);
+            color: var(--clr-white);
+        }
+
+        .btn--primary[disabled] {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .form-input,
+        .form-select {
+            padding: 16px 20px;
+            border: none;
+            border: 1px solid var(--input-border-color, var(--clr-black-10));
+            border-radius: 8px;
+            color: var(--input-text-color, var(--clr-black-30));
+            background-color: transparent;
+            outline: none;
+            max-width: 100%;
+            width: 100%;
+            font-family: inherit;
+            font-size: inherit;
+        }
+
+        .form-select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'><path fill='none' stroke='%23171A1B' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' d='M2 4l4 4 4-4'/></svg>");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 40px;
+        }
+
+        .eb-container {
+            max-width: var(--eb-container-width);
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 var(--eb-container-padding);
+        }
+
+        .eb-chat {
+            height: 100svh;
+            display: grid;
+            grid-template-rows: 70px 1fr auto;
+            background-color: var(--eb-bg);
+            overflow-y: auto;
+        }
+
+        .eb-chat-header {
+            background-color: var(--eb-header-bg-color);
+            color: var(--eb-header-text-color);
+            padding: 1rem 0;
+        }
+
+        .eb-chat-body {
+            padding: 1rem 0;
+            max-width: 100vw;
+        }
+
+        .eb-chat-content {
+            background-color: var(--eb-chat-body-bg-color);
+            color: var(--eb-chat-body-text-color);
+            height: 100%;
+            flex: 1;
+            border-radius: 1rem;
+        }
+
+        .eb-chat-content__message {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: 1rem;
+        }
+
+        .eb-chat-content__message--error {
+            color: var(--clr-red-30);
+        }
+
+        .eb-chat-body > .eb-container {
+            height: 100%;
+        }
+
+        .eb-chat-footer {
+            background-color: var(--eb-footer-bg-color);
+            color: var(--eb-footer-text-color);
+            padding: 0.5rem 0;
+        }
+
+        .eb-header-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .eb-header-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .eb-header-logo {
+            display: block;
+            width: 100px;
+            height: auto;
+        }
+
+        .eb-footer-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .eb-footer-logo {
+            display: block;
+            width: 100px;
+            height: auto;
+        }
+
+        .eb-footer-links {
+            list-style-type: none;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .eb-footer-links-item__link {
+            color: var(--clr-white);
+            text-decoration: none;
+        }
+
+        .eb-chat-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem 0;
+            margin: 0 auto;
+            width: 100%;
+            gap: 1rem;
+        }
+
+        .eb-chat-form__group {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .eb-chat-form__label {
+            display: block;
+            margin-bottom: 0.2rem;
+            font-size: 0.75rem;
+        }
+
+        .eb-chat-form__hint {
+            display: block;
+            margin-top: 0.25rem;
+            font-size: 0.7rem;
+            opacity: 0.7;
+        }
+
+        .eb-chat-form__error {
+            margin-top: 0.5rem;
+            color: var(--clr-red-30);
+            font-size: 0.8rem;
+            text-align: center;
+        }
+        .eb-chat-form__step {
+            width: 100%;
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+        }
+        .eb-chat-form__step[hidden] {
+            display: none;
+        }
+        .eb-chat-form__submit {
+            margin-inline: auto;
+        }
+
+        .theme-tokens-doc {
+            margin-top: 0.5rem;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--clr-black-10);
+            border-radius: 8px;
+            font-size: 0.75rem;
+            line-height: 1.5;
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+        .theme-tokens-doc__title {
+            font-weight: 600;
+            font-size: 0.75rem;
+            margin-bottom: 0.25rem;
+        }
+        .theme-tokens-doc__intro {
+            margin-bottom: 0.5rem;
+            opacity: 0.75;
+        }
+        .theme-tokens-doc__group + .theme-tokens-doc__group {
+            margin-top: 0.5rem;
+        }
+        .theme-tokens-doc__group-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.15rem;
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            font-size: 0.65rem;
+        }
+        .theme-tokens-doc__list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem 0.5rem;
+        }
+        .theme-tokens-doc__token {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 0.7rem;
+            padding: 0.1rem 0.35rem;
+            border-radius: 4px;
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+        .theme-advanced {
+            margin-top: 0.75rem;
+            font-size: 0.8rem;
+        }
+        .theme-advanced > summary {
+            cursor: pointer;
+            user-select: none;
+            opacity: 0.75;
+        }
+        .theme-advanced__textarea {
+            display: block;
+            width: 100%;
+            min-height: 180px;
+            margin-top: 0.5rem;
+            padding: 0.75rem;
+            border: 1px solid var(--clr-black-10);
+            border-radius: 8px;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 0.8rem;
+            line-height: 1.4;
+            resize: vertical;
+            background-color: transparent;
+            color: inherit;
+            outline: none;
+        }
+        .theme-advanced__error {
+            display: block;
+            margin-top: 0.25rem;
+            color: var(--clr-red-30);
+            font-size: 0.75rem;
+        }
+
+        #chat_container,
+        #chat_container_holder,
+        .easy-busy-chats-plugin {
+            height: 100%;
+        }
+        #chat_container:empty {
+            display: none;
+        }
+        #chat_container {
+            max-height: calc(100svh - 1rem - 80px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="eb-chat">
+        <header class="eb-chat-header">
+            <div class="eb-container">
+                <div class="eb-header-row">
+                    <img width="866" height="360" class="eb-header-logo" alt="EasyBusy" decoding="async"
+                        src="https://easy-busy.ua/wp-content/uploads/2025/03/easy_busy_logo.png">
+                    <h1 class="eb-header-title">Chats Demo</h1>
+                </div>
+            </div>
+        </header>
+        <main class="eb-chat-body">
+            <div class="eb-container">
+                <div class="eb-chat-content" id="chat_container_holder" data-chat-wrapper>
+                    <div class="eb-container">
+                        <form id="chat_init_form" class="eb-chat-form form" novalidate>
+                            <label class="eb-chat-form__group">
+                                <span class="eb-chat-form__label">Access token</span>
+                                <input type="text" required class="eb-chat-form__input form-input" name="access_token"
+                                    placeholder="Введіть access token" value="" autocomplete="off">
+                            </label>
+
+                            <div class="eb-chat-form__step" data-step-config hidden>
+                                <label class="eb-chat-form__group">
+                                    <span class="eb-chat-form__label">Company</span>
+                                    <select required class="eb-chat-form__input form-select" name="company_id">
+                                        <option value="">Select company</option>
+                                    </select>
+                                </label>
+                                <label class="eb-chat-form__group">
+                                    <span class="eb-chat-form__label">Language</span>
+                                    <select required class="eb-chat-form__input form-select" name="lang">
+                                        <option value="uk-UA">uk-UA</option>
+                                        <option value="en-US">en-US</option>
+                                        <option value="pl-PL">pl-PL</option>
+                                        <option value="ru-RU">ru-RU</option>
+                                    </select>
+                                </label>
+                                <div class="eb-chat-form__group">
+                                    <label>
+                                        <span class="eb-chat-form__label">Theme</span>
+                                        <select required class="eb-chat-form__input form-select" name="theme">
+                                            <option value="theme1">Theme 1 (default)</option>
+                                            <option value="theme2">Theme 2</option>
+                                            <option value="theme3">Theme 3</option>
+                                            <option value="theme4">Theme 4</option>
+                                        </select>
+                                    </label>
+                                    <details class="theme-advanced">
+                                        <summary>Advanced</summary>
+                                        <div class="theme-tokens-doc">
+                                            <div class="theme-tokens-doc__title">Available color tokens</div>
+                                            <div class="theme-tokens-doc__intro">
+                                                Use any of these keys inside the JSON below. Values accept hex (<code>#RRGGBB</code>) or an HSL triplet (<code>H S% L%</code>). Unset keys fall back to the default theme.
+                                            </div>
+                                            <div class="theme-tokens-doc__group">
+                                                <span class="theme-tokens-doc__group-label">Regions</span>
+                                                <div class="theme-tokens-doc__list">
+                                                    <span class="theme-tokens-doc__token">navigationBackground</span>
+                                                    <span class="theme-tokens-doc__token">navigationForeground</span>
+                                                    <span class="theme-tokens-doc__token">headerBackground</span>
+                                                    <span class="theme-tokens-doc__token">headerForeground</span>
+                                                    <span class="theme-tokens-doc__token">bodyBackground</span>
+                                                    <span class="theme-tokens-doc__token">bodyForeground</span>
+                                                    <span class="theme-tokens-doc__token">chatBodyBackground</span>
+                                                    <span class="theme-tokens-doc__token">chatBodyForeground</span>
+                                                    <span class="theme-tokens-doc__token">chatHeaderBackground</span>
+                                                    <span class="theme-tokens-doc__token">chatHeaderForeground</span>
+                                                    <span class="theme-tokens-doc__token">chatListBackground</span>
+                                                    <span class="theme-tokens-doc__token">chatListForeground</span>
+                                                    <span class="theme-tokens-doc__token">chatListItemBackground</span>
+                                                    <span class="theme-tokens-doc__token">chatListItemForeground</span>
+                                                    <span class="theme-tokens-doc__token">searchBackground</span>
+                                                    <span class="theme-tokens-doc__token">searchForeground</span>
+                                                    <span class="theme-tokens-doc__token">messageInputBackground</span>
+                                                    <span class="theme-tokens-doc__token">messageInputForeground</span>
+                                                </div>
+                                            </div>
+                                            <div class="theme-tokens-doc__group">
+                                                <span class="theme-tokens-doc__group-label">Base (shadcn)</span>
+                                                <div class="theme-tokens-doc__list">
+                                                    <span class="theme-tokens-doc__token">background</span>
+                                                    <span class="theme-tokens-doc__token">foreground</span>
+                                                    <span class="theme-tokens-doc__token">card</span>
+                                                    <span class="theme-tokens-doc__token">cardForeground</span>
+                                                    <span class="theme-tokens-doc__token">popover</span>
+                                                    <span class="theme-tokens-doc__token">popoverForeground</span>
+                                                    <span class="theme-tokens-doc__token">primary</span>
+                                                    <span class="theme-tokens-doc__token">primaryForeground</span>
+                                                    <span class="theme-tokens-doc__token">secondary</span>
+                                                    <span class="theme-tokens-doc__token">secondaryForeground</span>
+                                                    <span class="theme-tokens-doc__token">muted</span>
+                                                    <span class="theme-tokens-doc__token">mutedForeground</span>
+                                                    <span class="theme-tokens-doc__token">accent</span>
+                                                    <span class="theme-tokens-doc__token">accentForeground</span>
+                                                    <span class="theme-tokens-doc__token">destructive</span>
+                                                    <span class="theme-tokens-doc__token">destructiveForeground</span>
+                                                    <span class="theme-tokens-doc__token">border</span>
+                                                    <span class="theme-tokens-doc__token">input</span>
+                                                    <span class="theme-tokens-doc__token">ring</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <textarea class="theme-advanced__textarea" data-theme-colors spellcheck="false"></textarea>
+                                        <span class="theme-advanced__error" data-theme-error hidden></span>
+                                    </details>
+                                </div>
+                                <label class="eb-chat-form__group">
+                                    <span class="eb-chat-form__label">Logo URL</span>
+                                    <input type="url" required class="eb-chat-form__input form-input" name="logo_url"
+                                        placeholder="https://example.com/logo.png" value="">
+                                </label>
+                                <label class="eb-chat-form__group">
+                                    <span class="eb-chat-form__label">Website URL</span>
+                                    <input type="url" required class="eb-chat-form__input form-input" name="website_url"
+                                        placeholder="https://example.com" value="">
+                                </label>
+                                <label class="eb-chat-form__group">
+                                    <span class="eb-chat-form__label">Font family</span>
+                                    <input type="text" required class="eb-chat-form__input form-input" name="font_family"
+                                        placeholder="Oswald" value="">
+                                    <span class="eb-chat-form__hint">
+                                        The host is responsible for loading the font. Must be available on <a href="https://fonts.google.com/" target="_blank">Google Fonts</a>.
+                                    </span>
+                                </label>
+                            </div>
+
+                            <div class="eb-chat-form__group">
+                                <button type="submit" class="eb-chat-form__submit btn btn--primary" data-submit>
+                                    <span data-submit-label>Get companies</span>
+                                </button>
+                            </div>
+
+                            <div class="eb-chat-form__error" data-form-error hidden></div>
+                        </form>
+                    </div>
+                    <div class="eb-chat-content__message" data-chat-message style="display: none;">
+                        Завантаження...
+                    </div>
+                    <div id="chat_container"></div>
+                </div>
+            </div>
+        </main>
+        <footer class="eb-chat-footer">
+            <div class="eb-container">
+                <div class="eb-footer-row">
+                    <img width="260" height="104" class="eb-footer-logo" alt="EasyBusy" decoding="async"
+                        src="https://easy-busy.ua/wp-content/uploads/2025/09/footer-logo-colored.svg">
+                    <ul class="eb-footer-links">
+                        <li class="eb-footer-links-item">
+                            <a href="https://easy-busy.ua/privacy-policy/" class="eb-footer-links-item__link"
+                                target="_blank">Політика конфіденційності</a>
+                        </li>
+                        <li class="eb-footer-links-item">
+                            <a href="https://easy-busy.ua/terms/" class="eb-footer-links-item__link"
+                                target="_blank">Умови користування</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        (function () {
+            const API_BASE_URL = 'https://api.easy-busy.cloud/chats/v1';
+            const PLUGIN_URL = 'https://chats.easy-busy.cloud/plugin/loader.js';
+
+            const STORAGE_KEYS = {
+                accessToken: 'eb-demo-access-token',
+                companyId: 'eb-demo-company-id',
+                lang: 'eb-demo-lang',
+                theme: 'eb-demo-theme',
+                logoUrl: 'eb-demo-logo-url',
+                websiteUrl: 'eb-demo-website-url',
+                fontFamily: 'eb-demo-font-family',
+            };
+
+            const FIELD_TO_STORAGE = {
+                access_token: STORAGE_KEYS.accessToken,
+                company_id: STORAGE_KEYS.companyId,
+                lang: STORAGE_KEYS.lang,
+                theme: STORAGE_KEYS.theme,
+                logo_url: STORAGE_KEYS.logoUrl,
+                website_url: STORAGE_KEYS.websiteUrl,
+                font_family: STORAGE_KEYS.fontFamily,
+            };
+
+            const THEME_PRESETS = {
+                theme1: {
+                    colors: {},
+                },
+                theme2: {
+                    colors: {
+                        navigationBackground: "#FFFFFF",
+                        headerBackground: "#FFFFFF",
+                        bodyBackground: "#F7F2ED",
+                        chatListItemBackground: "#FFFFFF",
+                        primary: "#a41623",
+                    },
+                },
+                theme3: {
+                    colors: {
+                        navigationBackground: "#333333",
+                        navigationForeground: "#FFFFFF",
+                        headerBackground: "#333333",
+                        headerForeground: "#FFFFFF",
+                        bodyBackground: "#FFFFFF",
+                        chatHeaderBackground: "#F7F2ED",
+                        chatListItemBackground: "#FFFFFF",
+                        messageInputBackground: "#F7F2ED",
+                        primary: "#f85e00",
+                        border: "#444444",
+                    },
+                },
+                theme4: {
+                    colors: {
+                        navigationBackground: "#AA4465",
+                        navigationForeground: "#FFFFFF",
+                        headerBackground: "#AA4465",
+                        headerForeground: "#FFFFFF",
+                        bodyBackground: "#FFFFFF",
+                        chatBodyBackground: "#DCB6D5",
+                        chatHeaderBackground: "#F7F2ED",
+                        chatListItemBackground: "#FFFFFF",
+                        messageInputBackground: "#F7F2ED",
+                        primary: "#440381",
+                        border: "#444444",
+                    },
+                },
+            };
+
+            const DEFAULTS = {
+                accessToken: '', // Enter the token for your own test account.
+                lang: 'uk-UA',
+                theme: 'theme1',
+                logoUrl: 'https://placehold.co/96x40/3b2cdc/ffffff?text=DemoLogo',
+                websiteUrl: 'https://example.com',
+                fontFamily: 'Inter',
+            };
+
+            const THEME_COLORS_STORAGE_PREFIX = 'eb-demo-theme-colors-';
+
+            const form = document.querySelector('#chat_init_form');
+            const configStep = form.querySelector('[data-step-config]');
+            const submitBtn = form.querySelector('[data-submit]');
+            const submitLabel = form.querySelector('[data-submit-label]');
+            const errorBox = form.querySelector('[data-form-error]');
+            const messageContainer = document.querySelector('[data-chat-message]');
+            const companySelect = form.elements['company_id'];
+            const themeSelect = form.elements['theme'];
+            const themeColorsTextarea = form.querySelector('[data-theme-colors]');
+            const themeError = form.querySelector('[data-theme-error]');
+
+            let companiesLoaded = false;
+            let pluginScriptLoading = false;
+
+            const readStorage = (key) => {
+                try {
+                    return localStorage.getItem(key) || '';
+                } catch (e) {
+                    return '';
+                }
+            };
+
+            const writeStorage = (key, value) => {
+                try {
+                    if (value) localStorage.setItem(key, value);
+                    else localStorage.removeItem(key);
+                } catch (e) {
+                    // ignore
+                }
+            };
+
+            const prefillForm = () => {
+                for (const [fieldName, storageKey] of Object.entries(FIELD_TO_STORAGE)) {
+                    const field = form.elements[fieldName];
+                    if (!field) continue;
+                    const stored = readStorage(storageKey);
+                    if (stored) {
+                        field.value = stored;
+                    } else if (fieldName === 'access_token') {
+                        field.value = DEFAULTS.accessToken;
+                    } else if (fieldName === 'lang') {
+                        field.value = DEFAULTS.lang;
+                    } else if (fieldName === 'theme') {
+                        field.value = DEFAULTS.theme;
+                    } else if (fieldName === 'logo_url') {
+                        field.value = DEFAULTS.logoUrl;
+                    } else if (fieldName === 'website_url') {
+                        field.value = DEFAULTS.websiteUrl;
+                    } else if (fieldName === 'font_family') {
+                        field.value = DEFAULTS.fontFamily;
+                    }
+                }
+            };
+
+            const bindStorageSync = () => {
+                for (const [fieldName, storageKey] of Object.entries(FIELD_TO_STORAGE)) {
+                    const field = form.elements[fieldName];
+                    if (!field) continue;
+                    const handler = () => writeStorage(storageKey, field.value.trim());
+                    field.addEventListener('input', handler);
+                    field.addEventListener('change', handler);
+                }
+            };
+
+            const setError = (text) => {
+                if (!text) {
+                    errorBox.hidden = true;
+                    errorBox.textContent = '';
+                    return;
+                }
+                errorBox.hidden = false;
+                errorBox.textContent = text;
+            };
+
+            const setSubmitting = (isSubmitting, label) => {
+                submitBtn.disabled = isSubmitting;
+                if (label) submitLabel.textContent = label;
+            };
+
+            const setThemeError = (text) => {
+                if (!text) {
+                    themeError.hidden = true;
+                    themeError.textContent = '';
+                    return;
+                }
+                themeError.hidden = false;
+                themeError.textContent = text;
+            };
+
+            const applyThemeSelection = (themeKey) => {
+                const preset = THEME_PRESETS[themeKey]?.colors || {};
+                const stored = readStorage(THEME_COLORS_STORAGE_PREFIX + themeKey);
+                let text = JSON.stringify(preset, null, 2);
+                if (stored) {
+                    try {
+                        const parsed = JSON.parse(stored);
+                        if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) {
+                            text = stored;
+                        }
+                    } catch {
+                        // fall back to preset
+                    }
+                }
+                themeColorsTextarea.value = text;
+                setThemeError('');
+            };
+
+            const onThemeColorsInput = () => {
+                const themeKey = themeSelect.value;
+                const raw = themeColorsTextarea.value.trim();
+                if (!raw) {
+                    writeStorage(THEME_COLORS_STORAGE_PREFIX + themeKey, '');
+                    setThemeError('');
+                    return;
+                }
+                try {
+                    const parsed = JSON.parse(raw);
+                    if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
+                        throw new Error('Must be a JSON object');
+                    }
+                    setThemeError('');
+                    writeStorage(THEME_COLORS_STORAGE_PREFIX + themeKey, themeColorsTextarea.value);
+                } catch (e) {
+                    setThemeError(e.message);
+                }
+            };
+
+            const getThemeColors = () => {
+                const raw = themeColorsTextarea.value.trim();
+                if (!raw) return THEME_PRESETS[themeSelect.value]?.colors || {};
+                const parsed = JSON.parse(raw);
+                if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
+                    throw new Error('Must be a JSON object');
+                }
+                return parsed;
+            };
+
+            const loadGoogleFont = (fontFamily) => {
+                if (!fontFamily) return;
+                const id = `eb-demo-font-${fontFamily}`;
+                if (document.getElementById(id)) return;
+                const link = document.createElement('link');
+                link.id = id;
+                link.rel = 'stylesheet';
+                const family = fontFamily.trim().replace(/\s+/g, '+');
+                link.href = `https://fonts.googleapis.com/css2?family=${family}:wght@300;400;500;600;700&display=swap`;
+                document.head.appendChild(link);
+            };
+
+            const fetchCompanies = async (accessToken) => {
+                const response = await fetch(`${API_BASE_URL}/companies`, {
+                    headers: {
+                        Authorization: `Bearer ${accessToken}`,
+                        Accept: 'application/json',
+                    },
+                });
+                if (!response.ok) {
+                    throw new Error(`Failed to load companies (${response.status})`);
+                }
+                const data = await response.json();
+                if (Array.isArray(data)) return data;
+                if (Array.isArray(data?.items)) return data.items;
+                if (Array.isArray(data?.companies)) return data.companies;
+                if (Array.isArray(data?.data)) return data.data;
+                return [];
+            };
+
+            const populateCompanies = (companies) => {
+                const previous = readStorage(STORAGE_KEYS.companyId);
+                companySelect.innerHTML = '';
+
+                const placeholder = document.createElement('option');
+                placeholder.value = '';
+                placeholder.textContent = companies.length ? 'Select company' : 'No companies available';
+                placeholder.disabled = true;
+                companySelect.appendChild(placeholder);
+
+                for (const c of companies) {
+                    const id = c?.id ?? c?.companyId ?? c?.uuid ?? '';
+                    const name = c?.name ?? c?.title ?? id;
+                    if (!id) continue;
+                    const opt = document.createElement('option');
+                    opt.value = id;
+                    opt.textContent = name;
+                    companySelect.appendChild(opt);
+                }
+
+                if (previous && companySelect.querySelector(`option[value="${CSS.escape(previous)}"]`)) {
+                    companySelect.value = previous;
+                } else {
+                    companySelect.value = '';
+                }
+            };
+
+            const chatCallbacks = {
+                onOpenChat: async (payload = {}) => {
+                    return [
+                        {
+                            id: 'view_contact',
+                            label: 'Callback example',
+                            description: 'This is an example of a custom callback action',
+                            callback: async () => {
+                                alert('Callback executed! Payload: ' + JSON.stringify(payload));
+                                return Promise.reject();
+                            },
+                        },
+                    ];
+                },
+            };
+
+            const buildChatSettings = () => {
+                const data = new FormData(form);
+                const read = (name) => (data.get(name) ?? '').toString().trim();
+                return {
+                    accessToken: read('access_token'),
+                    companyId: read('company_id'),
+                    lang: read('lang'),
+                    themeKey: read('theme'),
+                    themeColors: getThemeColors(),
+                    logoUrl: read('logo_url'),
+                    websiteUrl: read('website_url'),
+                    fontFamily: read('font_family'),
+                };
+            };
+
+            const initializeChat = (settings) => {
+                const interval = setInterval(() => {
+                    if (!window.renderChatsApp) return;
+                    clearInterval(interval);
+
+                    try {
+                        window.localStorage.setItem('token', settings.accessToken);
+                    } catch (error) {
+                        console.log(error);
+                    }
+
+                    window.renderChatsApp('chat_container', {
+                        companyId: settings.companyId,
+                        accessToken: settings.accessToken,
+                        lang: settings.lang,
+                        callbacks: chatCallbacks,
+                        disableBrowserNotifications: true,
+                        theme: {
+                            colors: settings.themeColors,
+                            logoUrl: settings.logoUrl,
+                            websiteUrl: settings.websiteUrl,
+                            fontFamily: settings.fontFamily,
+                        },
+                    });
+
+                    if (messageContainer) {
+                        messageContainer.innerHTML = '';
+                        messageContainer.style.display = 'none';
+                    }
+                    form.style.display = 'none';
+                }, 100);
+            };
+
+            const ensurePluginLoaded = () => new Promise((resolve, reject) => {
+                if (window.renderChatsApp) return resolve();
+                if (pluginScriptLoading) {
+                    const waitInterval = setInterval(() => {
+                        if (window.renderChatsApp) {
+                            clearInterval(waitInterval);
+                            resolve();
+                        }
+                    }, 100);
+                    return;
+                }
+                pluginScriptLoading = true;
+                const script = document.createElement('script');
+                script.src = PLUGIN_URL;
+                script.onload = () => resolve();
+                script.onerror = () => reject(new Error('Failed to load chat plugin'));
+                document.head.appendChild(script);
+            });
+
+            const handleGetCompanies = async (accessToken) => {
+                setError('');
+                setSubmitting(true, 'Loading...');
+                try {
+                    const companies = await fetchCompanies(accessToken);
+                    populateCompanies(companies);
+                    configStep.hidden = false;
+                    companiesLoaded = true;
+                    submitLabel.textContent = 'Load chat';
+                } catch (e) {
+                    setError(e.message || 'Failed to load companies');
+                } finally {
+                    setSubmitting(false);
+                }
+            };
+
+            const handleLoadChat = async () => {
+                let settings;
+                try {
+                    settings = buildChatSettings();
+                } catch (e) {
+                    setError('Invalid theme colors JSON: ' + (e.message || 'parse error'));
+                    return;
+                }
+                const required = [
+                    settings.accessToken,
+                    settings.companyId,
+                    settings.lang,
+                    settings.themeKey,
+                    settings.logoUrl,
+                    settings.websiteUrl,
+                    settings.fontFamily,
+                ];
+                if (required.some((v) => !v)) {
+                    setError('Please fill in all fields');
+                    return;
+                }
+                setError('');
+                setSubmitting(true, 'Loading...');
+                try {
+                    loadGoogleFont(settings.fontFamily);
+                    await ensurePluginLoaded();
+                    if (messageContainer) {
+                        messageContainer.innerHTML = 'Завантаження...';
+                        messageContainer.style.display = 'flex';
+                    }
+                    initializeChat(settings);
+                } catch (e) {
+                    setError(e.message || 'Failed to load chat');
+                    setSubmitting(false, 'Load chat');
+                }
+            };
+
+            const onFormSubmit = async (e) => {
+                e.preventDefault();
+                const accessToken = form.elements['access_token'].value.trim();
+                if (!accessToken) {
+                    setError('Access token is required');
+                    return;
+                }
+                if (!companiesLoaded) {
+                    await handleGetCompanies(accessToken);
+                } else {
+                    await handleLoadChat();
+                }
+            };
+
+            form.elements['access_token'].addEventListener('input', () => {
+                if (companiesLoaded) {
+                    companiesLoaded = false;
+                    configStep.hidden = true;
+                    submitLabel.textContent = 'Get companies';
+                    setError('');
+                }
+            });
+
+            prefillForm();
+            bindStorageSync();
+            applyThemeSelection(themeSelect.value);
+            themeSelect.addEventListener('change', () => applyThemeSelection(themeSelect.value));
+            themeColorsTextarea.addEventListener('input', onThemeColorsInput);
+            form.addEventListener('submit', onFormSubmit);
+        })();
+    </script>
+</body>
+
+</html>

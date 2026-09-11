@@ -1,0 +1,38 @@
+name: Windows validation
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        target: [x86_64-pc-windows-msvc, i686-pc-windows-msvc]
+    env:
+      EASYBUSYCHAT_SKIP_UI_BUILD: '1'
+    defaults:
+      run:
+        working-directory: component
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Toolchain
+        run: |
+          rustup toolchain install 1.97.1 --profile minimal --component rustfmt --target ${{ matrix.target }}
+          rustup default 1.97.1
+      - run: cargo fmt --all --check
+      - run: node scripts/check-release-defaults.cjs
+      - run: python -m unittest discover -s ../tests -p 'test_*.py'
+      - run: cargo test --workspace --locked --target ${{ matrix.target }}
+      - run: node ../tests/frontend-repro.cjs
+      - run: ../tests/run-pipe-repro.ps1
+      - run: cargo build --locked --package easy_busy_chat_addin --target ${{ matrix.target }}
+      - run: node scripts/test-build-guards.cjs
+      - name: DLL ABI smoke
+        run: ./scripts/test-dll-smoke.ps1 -Target ${{ matrix.target }} -Dll target/${{ matrix.target }}/debug/EasyBusyChat.dll

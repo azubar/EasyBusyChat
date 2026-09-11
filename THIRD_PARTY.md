@@ -1,0 +1,6 @@
+# Сторонні компоненти
+
+- `component/native_api_1c`: Native API bindings, [upstream](https://github.com/Sebekerga/native_api_1c), MIT. Оригінальні тексти ліцензій і copyright збережені у кожному з трьох crate-каталогів.
+- `extensions/*/CommonTemplates/EBC_SpreadSheet/Ext/Template.bin`: пакет [azubar/SpreadSheet](https://github.com/azubar/SpreadSheet), версія 0.6.5 за метаданими макета. Містить Windows x86/x64 і Linux x64 бібліотеки. Upstream README заявляє MIT; вбудований шрифт Liberation Sans має окрему [SIL Open Font License 1.1](licenses/Liberation-Sans-OFL.txt). Текст шрифтової ліцензії взято з upstream commit `ac9fe3bc44140d866c930d00e1cd2b5ee3a42b5f`. Цей SHA ідентифікує джерело повідомлення, а не доводить відтворюваність вкладеної бінарної збірки.
+- `component/chat_app/plugin/loader.js`: завантажувач вебплагіна сервісу Easy-Busy Chats. Робочий інтерфейс отримує вебплагін із сервісу; його мінімізований distributable не входить у цей репозиторій. Доступ до зовнішнього сервісу регулюється його умовами; ліцензія цього репозиторію не надає прав на сервіс або його торговельні марки.
+- Rust/Tauri та транзитивні залежності зафіксовані у `component/Cargo.lock` і зберігають власні ліцензії. Під час розповсюдження нових бінарних збірок включайте повідомлення для фактично використаних залежностей.

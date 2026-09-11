@@ -1,0 +1,6 @@
+// Resource file for embedding EasyBusyUI.exe into DLL
+// Resource ID = 101, type = RCDATA
+
+#define IDR_EASYBUSYUI_EXE 101
+
+IDR_EASYBUSYUI_EXE RCDATA "EasyBusyUI.exe"

@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ConfigDumpInfo xmlns="http://v8.1c.ru/8.3/xcf/dumpinfo" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" format="Hierarchical" version="2.16">
+	<ConfigVersions>
+		<Metadata name="Catalog.EBC_Компании" id="962579b0-9e57-44cb-a41e-4dc7d163167f" configVersion="829e4b65e316076c1b71bde0181e667d77ca34e3">
+			<Metadata name="Catalog.EBC_Компании.Attribute.ДатаИзмененияEBC" id="0fb1b992-4f5e-49a6-a938-fe38b4cb87b0"/>
+			<Metadata name="Catalog.EBC_Компании.Attribute.ОсновнойПользователь" id="147a42d8-6ed7-498e-ab43-2683e47a7030"/>
+			<Metadata name="Catalog.EBC_Компании.Attribute.ВерсияДанныхEBC" id="1b6cf5fb-0e58-4c00-acca-823897a535c6"/>
+			<Metadata name="Catalog.EBC_Компании.TabularSection.Пользователи" id="60151f4c-6f9d-49a3-a65a-027743adde87"/>
+			<Metadata name="Catalog.EBC_Компании.TabularSection.Пользователи.Attribute.Пользователь" id="8c5df0fe-9b4d-4eef-8e71-5ed81f56a534"/>
+			<Metadata name="Catalog.EBC_Компании.Attribute.ДатаСинхронизации" id="a5367d29-0fae-4267-bbe3-b3ffc0cbb82c"/>
+			<Metadata name="Catalog.EBC_Компании.Attribute.ИдентификаторEBC" id="cf16fe46-3786-4ced-a4b2-8323bcd6bd97"/>
+		</Metadata>
+		<Metadata name="Catalog.EBC_Компании.Form.ФормаСписка" id="8a0c2cda-667c-4130-bee0-bdc76622e790" configVersion="a968b727cdb8dad5cb83a3dc33955c718471cdb7"/>
+		<Metadata name="Catalog.EBC_Компании.Form.ФормаСписка.Form" id="8a0c2cda-667c-4130-bee0-bdc76622e790.0" configVersion="869afe869358777d221b3d3ad60529d92e112485"/>
+		<Metadata name="Catalog.EBC_Компании.Form.ФормаЭлемента" id="6d307d81-4ae2-463d-8f58-ae2ffb8e6b3b" configVersion="884e319cba6fba6e7e70f47a22c18c2a33993b51"/>
+		<Metadata name="Catalog.EBC_Компании.Form.ФормаЭлемента.Form" id="6d307d81-4ae2-463d-8f58-ae2ffb8e6b3b.0" configVersion="b1811ff104cea9191c0a24471eb8754094639ab1"/>
+		<Metadata name="Catalog.EBC_Компании.ObjectModule" id="962579b0-9e57-44cb-a41e-4dc7d163167f.0" configVersion="78ad8018ae451a4c7389565a1eb8964fe4bb602d"/>
+		<Metadata name="Catalog.EBC_Пользователи" id="38c80a00-7c74-48dc-bc6d-43c86538b232" configVersion="4536406ed55ee437f1c065e45b752746e73ca35a">
+			<Metadata name="Catalog.EBC_Пользователи.TabularSection.ПраваНаУчетныеЗаписи.Attribute.Права" id="1d0943d4-fae2-42e3-9535-4c456712aae1"/>
+			<Metadata name="Catalog.EBC_Пользователи.TabularSection.ПраваНаУчетныеЗаписи.Attribute.УчетнаяЗапись" id="1defdd08-b48b-4bb0-862e-24611edca4fe"/>
+			<Metadata name="Catalog.EBC_Пользователи.Attribute.Пользователь" id="21dd74f5-b2df-47eb-bef2-84335abca505"/>
+			<Metadata name="Catalog.EBC_Пользователи.TabularSection.Компании.Attribute.Роль" id="2bc2056b-da77-4898-ace9-3882429e8562"/>
+			<Metadata name="Catalog.EBC_Пользователи.Attribute.ТокенДоступа" id="2c408016-43c4-4db6-9037-9c22d1cc63ae"/>
+			<Metadata name="Catalog.EBC_Пользователи.TabularSection.ПраваНаУчетныеЗаписи.Attribute.ИдентификаторУчетнойЗаписиEBC" id="2f6d19a9-e546-448b-ab63-7e497792e9ff"/>
+			<Metadata name="Catalog.EBC_Пользователи.TabularSection.ПраваНаУчетныеЗаписи" id="6880c1d9-e834-452a-b0d2-c5c49beec6e0"/>
+			<Metadata name="Catalog.EBC_Пользователи.TabularSection.Компании" id="84bc9e4f-7e00-4217-a52f-89bf83a27ce6"/>
+			<Metadata name="Catalog.EBC_Пользователи.Attribute.ЭлПочта" id="877ad18b-f221-474a-8f08-806687476379"/>
+			<Metadata name="Catalog.EBC_Пользователи.Attribute.ДатаСинхронизации" id="87b145a0-69c7-4610-839f-934ac87300e4"/>
+			<Metadata name="Catalog.EBC_Пользователи.Attribute.ДатаИзмененияEBC" id="a6f787f8-1864-4e60-9e1c-6aded1ee373e"/>
+			<Metadata name="Catalog.EBC_Пользователи.Attribute.ИдентификаторEBC" id="c897b995-d303-4f5d-a4d5-a0165ef1b26c"/>
+			<Metadata name="Catalog.EBC_Пользователи.TabularSection.Компании.Attribute.Компания" id="e5aa38f2-ae23-4928-97c6-1cad00c9f72a"/>
+			<Metadata name="Catalog.EBC_Пользователи.TabularSection.Компании.Attribute.Активен" id="f8c55938-ff51-408f-91c2-ecbf3e080db3"/>
+		</Metadata>
+		<Metadata name="Catalog.EBC_Пользователи.Form.ФормаСписка" id="df8310a8-3774-4814-9c83-cd92f419663f" configVersion="b92eb2ac513a8f31dfe14b90caaaac15a5eb3577"/>
+		<Metadata name="Catalog.EBC_Пользователи.Form.ФормаСписка.Form" id="df8310a8-3774-4814-9c83-cd92f419663f.0" configVersion="8e74b7667506d9a6c95c819191cc0a606dd02c76"/>
+		<Metadata name="Catalog.EBC_Пользователи.Form.ФормаЭлемента" id="d328f11e-013d-43e7-99bb-74100ea83470" configVersion="dd52cad097be1bbc32d35e4cd104eaee36e92dfe"/>
+		<Metadata name="Catalog.EBC_Пользователи.Form.ФормаЭлемента.Form" id="d328f11e-013d-43e7-99bb-74100ea83470.0" configVersion="54fd7f637d4de25b2a183305f1c593087e131bd3"/>
+		<Metadata name="Catalog.EBC_Пользователи.ObjectModule" id="38c80a00-7c74-48dc-bc6d-43c86538b232.0" configVersion="3f0330ffbddefbfd5deefa204efb4a7c962b0c01"/>
+		<Metadata name="Catalog.EBC_УчетныеЗаписи" id="7c405d76-6b30-44bf-b581-880818fca11a" configVersion="682ff75fcc0e5965d2cb48ea2844ff59a0913067">
+			<Metadata name="Catalog.EBC_УчетныеЗаписи.Attribute.ДатаИзмененияEBC" id="0b3a1f7f-62c3-4168-b790-5af77728961d"/>
+			<Metadata name="Catalog.EBC_УчетныеЗаписи.Attribute.Статус" id="0b83af85-ba07-4b19-b7b9-560c3d54f890"/>
+			<Metadata name="Catalog.EBC_УчетныеЗаписи.Attribute.Идентификатор" id="1746a641-4868-4889-b871-6b6e3c2ab500"/>
+			<Metadata name="Catalog.EBC_УчетныеЗаписи.Attribute.Активна" id="4754f2ba-7fba-4bb3-b08e-0377750f7e83"/>
+			<Metadata name="Catalog.EBC_УчетныеЗаписи.Attribute.ДопустимыеТипыФайлов" id="4dbdff0c-0ca2-4d00-a3fe-7b70d2573ec8"/>
+			<Metadata name="Catalog.EBC_УчетныеЗаписи.Attribute.ДатаСинхронизации" id="53381f41-c2eb-449d-98d1-9e878a0c60ee"/>
+			<Metadata name="Catalog.EBC_УчетныеЗаписи.Attribute.Игнорировать" id="56811853-ba2c-46dd-9737-18b494c09c70"/>
+			<Metadata name="Catalog.EBC_УчетныеЗаписи.Attribute.МожноСоздаватьЧат" id="6a54026c-f837-4bfa-b01c-4cac4c77c0fb"/>
+			<Metadata name="Catalog.EBC_УчетныеЗаписи.Attribute.МожноОтвечатьНаСообщение" id="6b4a50e8-43c2-441d-8ee4-d95579a47747"/>
+			<Metadata name="Catalog.EBC_УчетныеЗаписи.Attribute.Провайдер" id="82da1711-30a2-4f20-a91f-4e9f0ff9a944"/>
+			<Metadata name="Catalog.EBC_УчетныеЗаписи.Attribute.ИдентификаторEBC" id="9e361b78-c5bc-4e34-8f92-3fd89e6df28b"/>
+		</Metadata>
+		<Metadata name="Catalog.EBC_УчетныеЗаписи.Form.ФормаСписка" id="1ed6711e-6ce2-408e-b043-4bcb64e07da3" configVersion="7b83a0d48cd03fa4e250b26dee50b2fc72afe2b7"/>
+		<Metadata name="Catalog.EBC_УчетныеЗаписи.Form.ФормаСписка.Form" id="1ed6711e-6ce2-408e-b043-4bcb64e07da3.0" configVersion="86e6a21eb96e8c7e084a02e0baadd4cf93379f6b"/>
+		<Metadata name="Catalog.EBC_УчетныеЗаписи.Form.ФормаЭлемента" id="adbb7cd8-222c-42a3-bada-9624df5d4728" configVersion="21baba98def8ba39ec8cec8123619594e4ffca3c"/>
+		<Metadata name="Catalog.EBC_УчетныеЗаписи.Form.ФормаЭлемента.Form" id="adbb7cd8-222c-42a3-bada-9624df5d4728.0" configVersion="2dbcd260198c5600bf6d39f497bc0e1694ece195"/>
+		<Metadata name="Catalog.EBC_УчетныеЗаписи.ObjectModule" id="7c405d76-6b30-44bf-b581-880818fca11a.0" configVersion="44fbcd6e0bc6700da92a22774cf454eb3e74973a"/>
+		<Metadata name="Catalog.EBC_Чаты" id="2affc1b1-0de4-46ce-a533-075f3738e8d9" configVersion="b7de2cb4ae2b91f5f9fff62361f298ab9b7826d6">
+			<Metadata name="Catalog.EBC_Чаты.Attribute.ИмяПользователя" id="0ad16069-65c6-44ad-bf02-11892ec979d7"/>
+			<Metadata name="Catalog.EBC_Чаты.Attribute.Телефон" id="1868d322-f1f9-4c06-8335-24cd29869064"/>
+			<Metadata name="Catalog.EBC_Чаты.Attribute.НавигационнаяСсылка" id="29ac3341-7e02-4d55-ab7a-abb5a7cd5f41"/>
+			<Metadata name="Catalog.EBC_Чаты.Attribute.СоставнойИдентификатор" id="38fb9930-c197-4568-96b3-2af4ce9c216b"/>
+			<Metadata name="Catalog.EBC_Чаты.Attribute.ЕстьНепрочитанные" id="40e42314-4065-4ee1-a7ca-3699f4891527"/>
+			<Metadata name="Catalog.EBC_Чаты.Attribute.ДатаПоследнегоСообщения" id="49bfabd3-24af-4395-acf0-dfcfbd1935dc"/>
+			<Metadata name="Catalog.EBC_Чаты.Attribute.ТипЧата" id="5e3bf129-1ac9-42c4-ae1e-3d418451a636"/>
+			<Metadata name="Catalog.EBC_Чаты.Attribute.ТекстПоследнегоСообщения" id="6a236f28-33af-4a85-8afd-15925117d675"/>
+			<Metadata name="Catalog.EBC_Чаты.Attribute.ДатаСинхронизации" id="d24baf53-464c-42a3-949d-6a628da345cc"/>
+			<Metadata name="Catalog.EBC_Чаты.Attribute.ИдентификаторEBC" id="d2d64632-1a62-4a5d-8ee9-7bc4068e034f"/>
+			<Metadata name="Catalog.EBC_Чаты.Attribute.Активен" id="d7888c0d-7e69-417f-b933-c34bf832c30b"/>
+		</Metadata>
+		<Metadata name="Catalog.EBC_Чаты.Form.ФормаСписка" id="74391251-7ff1-409c-876a-3b0f9860ff4d" configVersion="a5bf332fa3b052cb960020e517dc2f9bfd18b669"/>
+		<Metadata name="Catalog.EBC_Чаты.Form.ФормаСписка.Form" id="74391251-7ff1-409c-876a-3b0f9860ff4d.0" configVersion="b7ad7b777a0b0ab45554b415c22c8dab6368c0f3"/>
+		<Metadata name="Catalog.EBC_Чаты.Form.ФормаЭлемента" id="57222fc2-6280-4922-8eff-debc683d9e1e" configVersion="90f564ac3493de5f8b4ef4e399306ff3fd4087eb"/>
+		<Metadata name="Catalog.EBC_Чаты.Form.ФормаЭлемента.Form" id="57222fc2-6280-4922-8eff-debc683d9e1e.0" configVersion="2b45d36192eda560f85279b961b1020707063a5c"/>
+		<Metadata name="Catalog.EBC_Чаты.ObjectModule" id="2affc1b1-0de4-46ce-a533-075f3738e8d9.0" configVersion="31d57dd0f2a2bfe49a9b1c8b0301bf2b145667df"/>
+		<Metadata name="Catalog.ВидыКонтактнойИнформации" id="3413802b-e40c-400b-86aa-96a65136fcc4" configVersion="d5c648207314ee42e83a58beea2f7b8f4af983c4"/>
+		<Metadata name="Catalog.КонтактныеЛица" id="fea03bfe-aca7-4046-bb6e-52ee425c241b" configVersion="4dedd864314033b782db7a864af6e816f5e8dfbc"/>
+		<Metadata name="Catalog.Контрагенты" id="b895b15e-fced-4a9b-bcb6-b46803447d67" configVersion="ac8984003243f20c4c1bd2ca59f815daa60bb1cf">
+			<Metadata name="Catalog.Контрагенты.TabularSection.КонтактнаяИнформация" id="2c04acbe-8354-43f6-85cb-8d41de024acc"/>
+			<Metadata name="Catalog.Контрагенты.Attribute.ОсновныеСведения" id="3dd1a3c0-f4c5-419b-b33c-17d9f515152a"/>
+			<Metadata name="Catalog.Контрагенты.TabularSection.КонтактнаяИнформация.Attribute.Тип" id="3df5b4f9-a3c3-4c96-b261-ff5abb87f323"/>
+			<Metadata name="Catalog.Контрагенты.Attribute.Ответственный" id="49975975-b612-4c87-84b8-bbee5d03be42"/>
+			<Metadata name="Catalog.Контрагенты.Attribute.ВидКонтрагента" id="4b4a77a4-ebba-471d-a15c-c78ba33a687a"/>
+			<Metadata name="Catalog.Контрагенты.TabularSection.КонтактнаяИнформация.Attribute.АдресЭП" id="51ec9a9a-eb14-4370-848a-8eadf27e707d"/>
+			<Metadata name="Catalog.Контрагенты.Attribute.НаименованиеПолное" id="53f92be7-4509-4098-bafd-f60a38d4c33b"/>
+			<Metadata name="Catalog.Контрагенты.Attribute.Покупатель" id="6ee4eb24-0aeb-4d24-9fe3-dc230345b258"/>
+			<Metadata name="Catalog.Контрагенты.TabularSection.КонтактнаяИнформация.Attribute.Вид" id="6f377442-1e9b-4755-b8c0-475afd47ea62"/>
+			<Metadata name="Catalog.Контрагенты.Attribute.КонтактноеЛицо" id="9138b01c-ff83-4d38-8da8-ce4b5348376b"/>
+			<Metadata name="Catalog.Контрагенты.TabularSection.КонтактнаяИнформация.Attribute.НомерТелефона" id="b1ce93fc-f55e-4716-9c98-092c5eb3fdf5"/>
+			<Metadata name="Catalog.Контрагенты.TabularSection.КонтактнаяИнформация.Attribute.Значение" id="bd49f84b-6df0-4ce3-a45f-30f9065313e6"/>
+			<Metadata name="Catalog.Контрагенты.TabularSection.КонтактнаяИнформация.Attribute.Представление" id="df6d311a-68f0-4932-ba36-0196a1b5ddd3"/>
+		</Metadata>
+		<Metadata name="Catalog.Пользователи" id="b5d993d0-8898-4669-bcc9-1d08f5d7701d" configVersion="28886d0f8e8ddc7ae23fbda8bd98c42c3f112079"/>
+		<Metadata name="Catalog.Сотрудники" id="e8f2a505-6b98-4560-8679-20bb943110b6" configVersion="b98c982fff03c99d967f2f69e8f291ee05730395"/>
+		<Metadata name="CommonCommand.EBC_ВыполнитьСинхронизациюСправочников" id="3cd1d446-0add-498e-b38b-bdcef85f410b" configVersion="7629290a84f109eec4132c1045c511a1c240981f"/>
+		<Metadata name="CommonCommand.EBC_ВыполнитьСинхронизациюСправочников.CommandModule" id="3cd1d446-0add-498e-b38b-bdcef85f410b.2" configVersion="94fab89d2171a89e9cc39457104ce156fa6e3852"/>
+		<Metadata name="CommonCommand.EBC_ВыполнитьСинхронизациюЧатов" id="54610dcf-50bf-4fb5-813c-efa38b3e2e00" configVersion="bbcda689a2391e8ecc09de88901cc5e1cffd860a"/>
+		<Metadata name="CommonCommand.EBC_ВыполнитьСинхронизациюЧатов.CommandModule" id="54610dcf-50bf-4fb5-813c-efa38b3e2e00.2" configVersion="80c5d7c64a0470468802bd668cda65239f61073b"/>
+		<Metadata name="CommonCommand.EBC_РасписаниеСинхронизацииСправочников" id="5e827282-39f3-4c06-b33c-4301566ce6fa" configVersion="16e86937668826d6bb1c2d881bfd47c575fa73e1"/>
+		<Metadata name="CommonCommand.EBC_РасписаниеСинхронизацииСправочников.CommandModule" id="5e827282-39f3-4c06-b33c-4301566ce6fa.2" configVersion="f0137c8c8fb4fd3ef5f5e4c69f983c68eacf0d08"/>
+		<Metadata name="CommonCommand.EBC_РасписаниеСинхронизацииЧатов" id="e267d1d6-8c1b-4739-b1dc-e6ac23e9c3dc" configVersion="8fcff5d80c495f4c10af3ca66cd5a8cfe5365246"/>
+		<Metadata name="CommonCommand.EBC_РасписаниеСинхронизацииЧатов.CommandModule" id="e267d1d6-8c1b-4739-b1dc-e6ac23e9c3dc.2" configVersion="1a365f80bed678426e30302ce0fb67d7c3564776"/>
+		<Metadata name="CommonCommand.EBC_СинхронизироватьСтруктуру" id="6c118003-38dc-43b2-8ec0-7e7c8b3210bf" configVersion="5ede2f5e6d1641434c9ab6afac959cad9f678ac0"/>
+		<Metadata name="CommonCommand.EBC_СинхронизироватьСтруктуру.CommandModule" id="6c118003-38dc-43b2-8ec0-7e7c8b3210bf.2" configVersion="33c33fa0e1fbc004e65fd9c631438c53c1a53947"/>
+		<Metadata name="CommonModule.EBC_АдаптерКонфигурации" id="ae8d20f1-f6e1-4d6f-9c4e-9e79cc3a3c17" configVersion="ee8b1ff003d77f9db094634c0335d12876b05f0c"/>
+		<Metadata name="CommonModule.EBC_АдаптерКонфигурации.Module" id="ae8d20f1-f6e1-4d6f-9c4e-9e79cc3a3c17.0" configVersion="e603f8d9f51c6d76f5a7bc404c2a6adf5874f434"/>
+		<Metadata name="CommonModule.EBC_ВебПлагин" id="372ceabf-bccb-4e43-9ff6-c51089bcd072" configVersion="e1fe9105c29c1fc00b2ca651f115c65944a0f20c"/>
+		<Metadata name="CommonModule.EBC_ВебПлагин.Module" id="372ceabf-bccb-4e43-9ff6-c51089bcd072.0" configVersion="9938024021166495a914f96770d3e269b6dcabd8"/>
+		<Metadata name="CommonModule.EBC_КлиентАПИ" id="ba16d109-bed6-4702-8316-f4e81d0c2bd2" configVersion="30f9c381b8b37bcbc3c117412b9b3b51bc35354d"/>
+		<Metadata name="CommonModule.EBC_КлиентАПИ.Module" id="ba16d109-bed6-4702-8316-f4e81d0c2bd2.0" configVersion="aee695a65c6a1b096b26009bb21574710019eb8d"/>
+		<Metadata name="CommonModule.EBC_Логирование" id="069c17fe-bd79-4384-8431-e8944757e7e5" configVersion="c309d3af1fcf604306913b0b7a673644b00828cd"/>
+		<Metadata name="CommonModule.EBC_Логирование.Module" id="069c17fe-bd79-4384-8431-e8944757e7e5.0" configVersion="a0875c2b51c425841d866785a2be187bf493f3ab"/>
+		<Metadata name="CommonModule.EBC_НастройкиВызовСервера" id="69267c07-9863-495b-8538-57348df65870" configVersion="f9fe39cb1b37ced9acc124b370683d142c2dcf69"/>
+		<Metadata name="CommonModule.EBC_НастройкиВызовСервера.Module" id="69267c07-9863-495b-8538-57348df65870.0" configVersion="a06527f21ccfc308ecfa867db962233043411906"/>
+		<Metadata name="CommonModule.EBC_НастройкиПовтИсп" id="86739693-8c76-46a4-986d-0a57d4e4abca" configVersion="a2e715b0be2da93f251022764fc5f859d26a496d"/>
+		<Metadata name="CommonModule.EBC_НастройкиПовтИсп.Module" id="86739693-8c76-46a4-986d-0a57d4e4abca.0" configVersion="92e87289f34e1517ad89bbd6853a37eced8f3f3b"/>
+		<Metadata name="CommonModule.EBC_НастройкиСервер" id="ad7fede4-b4fc-449a-af60-880f4b8d66ce" configVersion="6b8606c61103307895121f960e6752ae670db0b4"/>
+		<Metadata name="CommonModule.EBC_НастройкиСервер.Module" id="ad7fede4-b4fc-449a-af60-880f4b8d66ce.0" configVersion="8bb57b2c9afa4a72db3892d64cb573991b5454b9"/>
+		<Metadata name="CommonModule.EBC_ПечатьДокументов" id="55997cd5-757b-4cd1-9c59-0be458b54f23" configVersion="7f135a5cedcf07ecd66f6a3b3607458184a478b0"/>
+		<Metadata name="CommonModule.EBC_ПечатьДокументов.Module" id="55997cd5-757b-4cd1-9c59-0be458b54f23.0" configVersion="8b7c9da8d3597ad94c6f812c2ae7c2c8fc09cec9"/>
+		<Metadata name="CommonModule.EBC_ПечатьДокументовВызовСервера" id="7c1f5a8e-9d3b-4e21-a0c7-5b6e2f81d934" configVersion="a289678235603ecd28937ae65699c383f9f117a4"/>
+		<Metadata name="CommonModule.EBC_ПечатьДокументовВызовСервера.Module" id="7c1f5a8e-9d3b-4e21-a0c7-5b6e2f81d934.0" configVersion="4cf17d4bf3afb1f518a85b2f64f03402af4094a9"/>
+		<Metadata name="CommonModule.EBC_ПечатьДокументовКлиент" id="ade49e05-7cb3-42ca-bf21-b161a12c847d" configVersion="56e6928b4f9ef01f334dacdbd58d88ab446d3d70"/>
+		<Metadata name="CommonModule.EBC_ПечатьДокументовКлиент.Module" id="ade49e05-7cb3-42ca-bf21-b161a12c847d.0" configVersion="80cbce2f8254ba5355b59b7eff70687fabd55494"/>
+		<Metadata name="CommonModule.EBC_ПодключаемыеКоманды" id="a6e4eb86-eb12-438f-8d0f-000ba3ac0a3d" configVersion="a43494d59bb30dcda7793d53f90f1826cbad0518"/>
+		<Metadata name="CommonModule.EBC_ПодключаемыеКоманды.Module" id="a6e4eb86-eb12-438f-8d0f-000ba3ac0a3d.0" configVersion="f434859682cc79793342d398dfb2c1522e22ad9a"/>
+		<Metadata name="CommonModule.EBC_ПодключаемыеКомандыКлиент" id="38fed267-43ce-490b-8def-7f2e81b7edd8" configVersion="1a91c31cd0f2663c6662fb3f82063b966cb38405"/>
+		<Metadata name="CommonModule.EBC_ПодключаемыеКомандыКлиент.Module" id="38fed267-43ce-490b-8def-7f2e81b7edd8.0" configVersion="9836f528812dd37fb6d2c75165fd1c5b8ce5a39e"/>
+		<Metadata name="CommonModule.EBC_РегламентныеЗадания" id="e70e6935-0a60-49ec-bf0a-9f4cb3458463" configVersion="63fa1858208b7c266520be2f6795982b0bd094c9"/>
+		<Metadata name="CommonModule.EBC_РегламентныеЗадания.Module" id="e70e6935-0a60-49ec-bf0a-9f4cb3458463.0" configVersion="a1ae185790de48b148616606c5ef5f6443c73783"/>
+		<Metadata name="CommonModule.EBC_РегламентныеЗаданияВызовСервера" id="a3af7967-f16c-43b0-9bcc-ffc0f1453e69" configVersion="f1809bc86ec6d43639f802d8b7d375b2d85ce361"/>
+		<Metadata name="CommonModule.EBC_РегламентныеЗаданияВызовСервера.Module" id="a3af7967-f16c-43b0-9bcc-ffc0f1453e69.0" configVersion="09efa3e02bd4d3ba04a70e538d5f59d060fd4aef"/>
+		<Metadata name="CommonModule.EBC_РегламентныеЗаданияКлиент" id="33d3128b-fd00-49a4-900c-96fdf4e175a4" configVersion="624c6d995487cfac264f77555d54103a76df7ae3"/>
+		<Metadata name="CommonModule.EBC_РегламентныеЗаданияКлиент.Module" id="33d3128b-fd00-49a4-900c-96fdf4e175a4.0" configVersion="93b0a97b61e6f082ada29aea3a014b54df5d352f"/>
+		<Metadata name="CommonModule.EBC_ЧатВызовСервера" id="c89bee09-72f4-455e-adfe-30401f9e9bee" configVersion="346590fcfe975e1ff38726cccf8cda87a07751c8"/>
+		<Metadata name="CommonModule.EBC_ЧатВызовСервера.Module" id="c89bee09-72f4-455e-adfe-30401f9e9bee.0" configVersion="fa82dc19d1a3997b353de10ca4008a75edf5b3c4"/>
+		<Metadata name="CommonModule.EBC_Ядро" id="88f7ad26-f726-4445-8398-7bb3bca11208" configVersion="06f9136be40fe7be328c661d66877d519d1a6e73"/>
+		<Metadata name="CommonModule.EBC_Ядро.Module" id="88f7ad26-f726-4445-8398-7bb3bca11208.0" configVersion="b239635ca5b405904e9c84a7a8be78cf922a7543"/>
+		<Metadata name="CommonModule.ПодключаемыеКомандыПереопределяемый" id="35237c1d-5948-47da-b1bb-5810a9d14557" configVersion="0fa5389d643ccae88ba571914c6b9c5222ad8c53"/>
+		<Metadata name="CommonModule.ПодключаемыеКомандыПереопределяемый.Module" id="35237c1d-5948-47da-b1bb-5810a9d14557.0" configVersion="c5d7d2529a0b85d0794e2aaa77fbdba5dc683f51"/>
+		<Metadata name="CommonModule.УправлениеПечатьюКлиентПереопределяемый" id="9fdacc1d-5e9b-49ae-8793-935038e24bf1" configVersion="1a143c60855aa3d5276d8153fd90a183f305318f"/>
+		<Metadata name="CommonModule.УправлениеПечатьюКлиентПереопределяемый.Module" id="9fdacc1d-5e9b-49ae-8793-935038e24bf1.0" configVersion="f951b43b943a9589657bf05d1516cb0de04bb83f"/>
+		<Metadata name="CommonModule.УправлениеПечатьюПереопределяемый" id="8f817799-7f51-4a80-9d51-284500583d87" configVersion="7fb2350e15177ad8ac7c996b0fe75c099eae782d"/>
+		<Metadata name="CommonModule.УправлениеПечатьюПереопределяемый.Module" id="8f817799-7f51-4a80-9d51-284500583d87.0" configVersion="d3cc20d520e8c7b0758f1f0988e095185c013cd6"/>
+		<Metadata name="CommonPicture.EBC_EasyBusyChat16" id="9b51311c-d135-4950-8e3e-c7e6c0186c06" configVersion="8940689bf3597592bacf0f0c4d49bd3066858bde"/>
+		<Metadata name="CommonPicture.EBC_EasyBusyChat16.Picture" id="9b51311c-d135-4950-8e3e-c7e6c0186c06.0" configVersion="3ea8e6b05247518d638c9810c910cde151ee0f62"/>
+		<Metadata name="CommonPicture.EBC_EasyBusyChatLogo" id="82982c5a-3cc4-4b29-83e4-5d183ab5327e" configVersion="f330764075b3181aa4a646a548f21c248274c8dd"/>
+		<Metadata name="CommonPicture.EBC_EasyBusyChatLogo.Picture" id="82982c5a-3cc4-4b29-83e4-5d183ab5327e.0" configVersion="8fd25b5e28c15f519d9377de9c64022b960e7482"/>
+		<Metadata name="CommonPicture.EBC_Facebook" id="d6a36901-99d5-4dcd-be1e-1e27f63bb717" configVersion="82f308c59046f2f8ccef397d71b85496ad36386f"/>
+		<Metadata name="CommonPicture.EBC_Facebook.Picture" id="d6a36901-99d5-4dcd-be1e-1e27f63bb717.0" configVersion="be6872ddad58ef6c572520795caaeb5179ff51c3"/>
+		<Metadata name="CommonPicture.EBC_Instagram" id="3356c480-3e8c-4d79-8e66-4c1f8ef46e59" configVersion="dafe403d8422057a1b69dede76298a2d3a1f0c03"/>
+		<Metadata name="CommonPicture.EBC_Instagram.Picture" id="3356c480-3e8c-4d79-8e66-4c1f8ef46e59.0" configVersion="d074a3ae118e9363f63a62cfd6a9ad0788b5c90e"/>
+		<Metadata name="CommonPicture.EBC_Telegram" id="0fc7e9df-13a5-4b8e-ba9d-88a64850fc0d" configVersion="e52f646f633c71f3363d8a774163df1c4c65850f"/>
+		<Metadata name="CommonPicture.EBC_Telegram.Picture" id="0fc7e9df-13a5-4b8e-ba9d-88a64850fc0d.0" configVersion="ff05fe6432c56434bed7e47cee86ce46c4a774ce"/>
+		<Metadata name="CommonPicture.EBC_TelegramBot" id="b31e6e49-9e81-4aaf-9494-5aa410ba295a" configVersion="7cc81467e943067952fd3983128cad88dbfbfae4"/>
+		<Metadata name="CommonPicture.EBC_TelegramBot.Picture" id="b31e6e49-9e81-4aaf-9494-5aa410ba295a.0" configVersion="ddab45c33f6c87ffcfb58af1e81f9cdc8f0f3b3e"/>
+		<Metadata name="CommonPicture.EBC_Viber" id="00c0c0c7-de2f-45d1-b976-2c9ace56147a" configVersion="0c5ec5222dd2855f708662d1b7f74c8b7ae22d58"/>
+		<Metadata name="CommonPicture.EBC_Viber.Picture" id="00c0c0c7-de2f-45d1-b976-2c9ace56147a.0" configVersion="c6f305a28bf2f5ebfcf19fbd5631c801ad584bd3"/>
+		<Metadata name="CommonPicture.EBC_WebChat" id="3525c587-782e-45ee-b13b-deb594e05cfc" configVersion="41546d85721cb4981ec074e8bb2fbdc0537c48ff"/>
+		<Metadata name="CommonPicture.EBC_WebChat.Picture" id="3525c587-782e-45ee-b13b-deb594e05cfc.0" configVersion="254f7c1734347942c611fdd2cfd10fb2c0d160a4"/>
+		<Metadata name="CommonPicture.EBC_WhatsApp" id="a9bf98f3-0ce1-4925-b59d-df1e8a5e6aa6" configVersion="51f2e8122d22f58f796fb8764889cc61e010f99e"/>
+		<Metadata name="CommonPicture.EBC_WhatsApp.Picture" id="a9bf98f3-0ce1-4925-b59d-df1e8a5e6aa6.0" configVersion="9d4d709fd4e6ed6756c0e1b4cf48c1e734d670b5"/>
+		<Metadata name="CommonPicture.EBC_Вайбер" id="2967a6d3-8f70-4d23-b83b-17dae1a1d518" configVersion="30fdebffe25c532d2ed9543a89d8abc2ab72d251"/>
+		<Metadata name="CommonPicture.EBC_Вайбер.Picture" id="2967a6d3-8f70-4d23-b83b-17dae1a1d518.0" configVersion="44be26151f7fb5abaa325b22d6ff98cd81467e35"/>
+		<Metadata name="CommonPicture.EBC_Изображение" id="c66f7c03-bb4f-4b02-9bf6-54c06df72fa2" configVersion="e3382739a26bd31994f578291a2509e00cb0391b"/>
+		<Metadata name="CommonPicture.EBC_Изображение.Picture" id="c66f7c03-bb4f-4b02-9bf6-54c06df72fa2.0" configVersion="ca5d02896c0c31fa2461bc9a63fcc6eaf5aebf92"/>
+		<Metadata name="CommonPicture.EBC_Обновить" id="a2f18c27-e5ae-47bc-b561-279fad1e4fd4" configVersion="bb9ca609be4ac0f4d5ca27af2c04f7401bb2ecab"/>
+		<Metadata name="CommonPicture.EBC_Обновить.Picture" id="a2f18c27-e5ae-47bc-b561-279fad1e4fd4.0" configVersion="c4b908736304271e7370bedcd6eb16a49dc632ca"/>
+		<Metadata name="CommonPicture.EBC_ОсновныеСведенияСписок" id="af27b89a-c233-40c5-b639-0fda13c4d12e" configVersion="5889b7515059c0ff140117c2e3c8c5442ae9d13d"/>
+		<Metadata name="CommonPicture.EBC_ОсновныеСведенияСписок.Picture" id="af27b89a-c233-40c5-b639-0fda13c4d12e.0" configVersion="863abb1751ddb56f0718d780a685e924eb4ad394"/>
+		<Metadata name="CommonPicture.EBC_Отвязать" id="2e36a855-ee74-4632-a28a-e6786d5f1467" configVersion="da0c00bea6840d81af6dab3f71da0f4bde662dd5"/>
+		<Metadata name="CommonPicture.EBC_Отвязать.Picture" id="2e36a855-ee74-4632-a28a-e6786d5f1467.0" configVersion="fd6361578df8ee458caeb296222d684414a62a3a"/>
+		<Metadata name="CommonPicture.EBC_Отвязать2" id="6c4a011c-8039-4e4d-b262-5e5d138ccea2" configVersion="942ea779a88c3d631f852a84c780f074c6771152"/>
+		<Metadata name="CommonPicture.EBC_Отвязать2.Picture" id="6c4a011c-8039-4e4d-b262-5e5d138ccea2.0" configVersion="b78f31fb4bbdccab7cae561db692e13309733503"/>
+		<Metadata name="CommonPicture.EBC_ОтправитьСообщение" id="6e35f2bb-59b3-4ec9-9927-e3446f30e087" configVersion="8841c1057ef28fa396016831fe3d4e65186815a4"/>
+		<Metadata name="CommonPicture.EBC_ОтправитьСообщение.Picture" id="6e35f2bb-59b3-4ec9-9927-e3446f30e087.0" configVersion="ff3b99e90ff90c6212c3845f1a56194a5ccb35af"/>
+		<Metadata name="CommonPicture.EBC_ПровайдерыЧатов" id="7f3d1a4c-2b58-4d69-9e17-c0a5b6f4e831" configVersion="dbf433104f2113b2d0b81bacbeae85fc350d4f25"/>
+		<Metadata name="CommonPicture.EBC_ПровайдерыЧатов.Picture" id="7f3d1a4c-2b58-4d69-9e17-c0a5b6f4e831.0" configVersion="3b0c64d711387585f03ffd615d255dd63cb368e4"/>
+		<Metadata name="CommonPicture.EBC_Самолетик" id="c6f7ffec-6fba-4b65-98c2-d075928e68ad" configVersion="2622169b067402c657cbea8f76cd9bd7291fbcc5"/>
+		<Metadata name="CommonPicture.EBC_Самолетик.Picture" id="c6f7ffec-6fba-4b65-98c2-d075928e68ad.0" configVersion="46a195487a1fa61e90a4c1084bb09cb369f2d158"/>
+		<Metadata name="CommonPicture.EBC_Связать" id="78ebeb03-c6c9-4ba7-8fdd-4e6ef26375a8" configVersion="60474db6058c1b44034246b4eafeb74ddaf94919"/>
+		<Metadata name="CommonPicture.EBC_Связать.Picture" id="78ebeb03-c6c9-4ba7-8fdd-4e6ef26375a8.0" configVersion="3a132a49152307cf3f353fe051031511b734b9ad"/>
+		<Metadata name="CommonPicture.EBC_Связать2" id="1f252da7-ef29-4042-a0e3-3ad696eb5a9f" configVersion="f25e74fe14e036404cc4d0c627a18a907a8d39ea"/>
+		<Metadata name="CommonPicture.EBC_Связать2.Picture" id="1f252da7-ef29-4042-a0e3-3ad696eb5a9f.0" configVersion="a7b1d42de7c36e53d63a1e90d8135df35ae31acb"/>
+		<Metadata name="CommonPicture.EBC_СвязатьОсн" id="850a0596-9338-4918-9ad8-af1db5acd831" configVersion="db6d9dbacc459baa023ac2f91aa4005a52a7af06"/>
+		<Metadata name="CommonPicture.EBC_СвязатьОсн.Picture" id="850a0596-9338-4918-9ad8-af1db5acd831.0" configVersion="21995ed1e7324fcb4d2ae25bf83b3ed1b75c1e54"/>
+		<Metadata name="CommonPicture.EBC_СостоянияДокумента" id="112fc066-910b-428d-98b2-418f96d874f4" configVersion="f99215c282e8aa40399bb539fb5f84ec4af2a771"/>
+		<Metadata name="CommonPicture.EBC_СостоянияДокумента.Picture" id="112fc066-910b-428d-98b2-418f96d874f4.0" configVersion="61f5cbc8474a97d474b0547b6496035db698f143"/>
+		<Metadata name="CommonPicture.EBC_Телеграм" id="d53bca8a-5783-4bfd-8327-8b28fc485ec9" configVersion="54b10ad3506001622a614d9e52ee36c300e2f5a0"/>
+		<Metadata name="CommonPicture.EBC_Телеграм.Picture" id="d53bca8a-5783-4bfd-8327-8b28fc485ec9.0" configVersion="4b04695bef3452310e6801e9f3511602bb3eba7f"/>
+		<Metadata name="CommonPicture.EBC_ФайлPDF" id="0b86f76a-7c45-47ba-a746-0ce1d07e62c6" configVersion="75eaa9d971c35d2889d034b88b9a0cfc2c434f22"/>
+		<Metadata name="CommonPicture.EBC_ФайлPDF.Picture" id="0b86f76a-7c45-47ba-a746-0ce1d07e62c6.0" configVersion="5d11cf735a06d7281ffc103662bf049bf87af66b"/>
+		<Metadata name="CommonPicture.EBC_Чаты" id="8ef28153-885d-4bd6-9a6a-654738f8f403" configVersion="9fb77f3bc371325a218bf5cedadf47de97775306"/>
+		<Metadata name="CommonPicture.EBC_Чаты.Picture" id="8ef28153-885d-4bd6-9a6a-654738f8f403.0" configVersion="9d7ed81c61c1f3e167fef653512923d2313988ec"/>
+		<Metadata name="CommonTemplate.EBC_SpreadSheet" id="4c1fea3e-5916-48e7-9a30-a719e87e6ac2" configVersion="91dc6fade02d00ee03600c3b5b3c3574484de669"/>
+		<Metadata name="CommonTemplate.EBC_SpreadSheet.Template" id="4c1fea3e-5916-48e7-9a30-a719e87e6ac2.0" configVersion="6cd607f29324437547f0a31be4c872a304151806"/>
+		<Metadata name="CommonTemplate.EasyBusyChat_x32" id="f44fabd1-927e-4c87-9e63-a23aab8b305a" configVersion="78913294eb8ba983bd47142faa93415585f0ad55"/>
+		<Metadata name="CommonTemplate.EasyBusyChat_x32.Template" id="f44fabd1-927e-4c87-9e63-a23aab8b305a.0" configVersion="caba7afde44a63366a9e095f1ef53eba74b02945"/>
+		<Metadata name="CommonTemplate.EasyBusyChat_x64" id="33380127-6bc9-4314-bb34-0ae70e46ae88" configVersion="7996c48657de811dc19a938a9f2400ea8e27c6d5"/>
+		<Metadata name="CommonTemplate.EasyBusyChat_x64.Template" id="33380127-6bc9-4314-bb34-0ae70e46ae88.0" configVersion="98336ae6e433a2dec3f41d0b911c076d0309165d"/>
+		<Metadata name="Configuration.EasyBusyChat" id="f7736016-fb1c-4ed0-878c-d7afdd8c9b8b" configVersion="4c19da3d8288f4d36e7512a49c0e18c510251b44"/>
+		<Metadata name="Configuration.EasyBusyChat.ManagedApplicationModule" id="0af67e5a-dbfb-4a07-a3b5-cb36756931c2.6" configVersion="0e3e6bdb04df2e80eac7813015d061452bca3472"/>
+		<Metadata name="DataProcessor.EBC_КонтактЦентр" id="677193a0-baf2-45a2-b8c4-4d8c33b1fca3" configVersion="153cb448bb601c4473b3606876cac6b954d5fb28">
+			<Metadata name="DataProcessor.EBC_КонтактЦентр.Attribute.ТекущийЧат" id="6e3b8a91-3de5-4e01-9e5c-9a1a636d9f06"/>
+			<Metadata name="DataProcessor.EBC_КонтактЦентр.Attribute.ТекущийКонтрагент" id="a427e09c-29f1-4318-b1a4-7358a911320b"/>
+			<Metadata name="DataProcessor.EBC_КонтактЦентр.Attribute.ТекущийДокумент" id="b41e6a44-0114-476d-8736-5a3c8ceb5c8a"/>
+			<Metadata name="DataProcessor.EBC_КонтактЦентр.Attribute.КомпанияEBC" id="d7670b1d-2262-43cb-b112-6678db608533"/>
+			<Metadata name="DataProcessor.EBC_КонтактЦентр.Command.КомандаКонтактЦентр" id="edf5b718-9bce-4723-97f4-5623c390d84f"/>
+		</Metadata>
+		<Metadata name="DataProcessor.EBC_КонтактЦентр.Command.КомандаКонтактЦентр.CommandModule" id="edf5b718-9bce-4723-97f4-5623c390d84f.2" configVersion="02e7486eef6f51522b14b1f87fa204ee1e6cc433"/>
+		<Metadata name="DataProcessor.EBC_КонтактЦентр.Form.Форма" id="b9e6b8dc-5776-47e6-9b03-d6469359ef7b" configVersion="3085cf4e2d84a4d45a1a32c13364de1747fbd0a4"/>
+		<Metadata name="DataProcessor.EBC_КонтактЦентр.Form.Форма.Form" id="b9e6b8dc-5776-47e6-9b03-d6469359ef7b.0" configVersion="6b52ae5c614b0492f6b54b672c35bb7b103cf2ff"/>
+		<Metadata name="DataProcessor.EBC_КонтактЦентр.Form.ФормаОтправкиСообщения" id="ef8fddf8-60db-4c6e-b7e9-115f9141184f" configVersion="a90a3c7f5a37f7e9e4cad44e35d85e5abcb9daed"/>
+		<Metadata name="DataProcessor.EBC_КонтактЦентр.Form.ФормаОтправкиСообщения.Form" id="ef8fddf8-60db-4c6e-b7e9-115f9141184f.0" configVersion="e9b0b864ee1851f4f27c00bbb4568b2cb7ec350b"/>
+		<Metadata name="DataProcessor.EBC_КонтактЦентр.Form.ФормаПривязанныеЧаты" id="88fb24f2-b28a-41b7-9035-ebf4eff1721b" configVersion="c98ad759c5eef40a7fa459193c9c70c60a41af02"/>
+		<Metadata name="DataProcessor.EBC_КонтактЦентр.Form.ФормаПривязанныеЧаты.Form" id="88fb24f2-b28a-41b7-9035-ebf4eff1721b.0" configVersion="c52851ed0779d5acb55a65843c8dbcb531252ee3"/>
+		<Metadata name="Document.ЗаказПокупателя" id="c4910e05-5173-46cc-94a0-75a53fd761c6" configVersion="2c6efe77d04ee14b981ffab6e63b4b53577bde96"/>
+		<Metadata name="Document.РасходнаяНакладная" id="e0ff6612-401b-44ea-b14f-1af438eb9d78" configVersion="5e872e0753b78e664abf0f4d4c0a394921e3fee4"/>
+		<Metadata name="Document.СчетНаОплату" id="bacdf3cc-3f7c-4bb9-be2e-2069a81e5202" configVersion="b0754dfd6c5519507620f74dba3e305960719bff"/>
+		<Metadata name="Enum.EBC_ИсточникиСвязи" id="9af72ae5-e8cd-448f-99e7-9ddad8df481a" configVersion="9af49dddeac03810a4c665af069074eb68014512">
+			<Metadata name="Enum.EBC_ИсточникиСвязи.EnumValue.Ручная" id="1830fc5f-1da7-49eb-b8aa-66f98f8eb12b"/>
+			<Metadata name="Enum.EBC_ИсточникиСвязи.EnumValue.Импорт" id="79756257-84d0-4042-9624-382b955976d6"/>
+			<Metadata name="Enum.EBC_ИсточникиСвязи.EnumValue.API" id="b0471183-f61e-4ccc-aab1-3c2f97cf37fb"/>
+		</Metadata>
+		<Metadata name="Enum.EBC_ИсточникиСвязи.ManagerModule" id="9af72ae5-e8cd-448f-99e7-9ddad8df481a.0" configVersion="187d552b8c78bceb013614e8ab2a336e604f7d17"/>
+		<Metadata name="Enum.EBC_КатегорииЖурнала" id="e2f136ca-618c-48e7-8c2d-077825f29765" configVersion="986a0ada61fd703dcb827943dcb1080756a82b22">
+			<Metadata name="Enum.EBC_КатегорииЖурнала.EnumValue.ТехническоеСобытие" id="ba579bee-9032-46dd-94de-6716367cbdb4"/>
+			<Metadata name="Enum.EBC_КатегорииЖурнала.EnumValue.ДействиеПользователя" id="f4aed8d1-521c-4a47-87d7-090c8aef1cc7"/>
+		</Metadata>
+		<Metadata name="Enum.EBC_ПраваНаУчетнуюЗапись" id="b409da09-b6d9-44ce-ad91-327da84cf453" configVersion="ae2711893b15a3fee8317972e79f090f0cebf277">
+			<Metadata name="Enum.EBC_ПраваНаУчетнуюЗапись.EnumValue.ТолькоНазначенныеЧаты" id="26257235-651d-4823-8533-23aa8829e49a"/>
+			<Metadata name="Enum.EBC_ПраваНаУчетнуюЗапись.EnumValue.ВсеЧаты" id="9bb98ee6-f342-4fa7-8938-b0bf197c546b"/>
+			<Metadata name="Enum.EBC_ПраваНаУчетнуюЗапись.EnumValue.НеОпределено" id="9bde5bdd-64e2-4fd7-a7b2-92e598f290c4"/>
+		</Metadata>
+		<Metadata name="Enum.EBC_ПраваНаУчетнуюЗапись.ManagerModule" id="b409da09-b6d9-44ce-ad91-327da84cf453.0" configVersion="ea38f520dc93412ff416360a65fad6af276b42a2"/>
+		<Metadata name="Enum.EBC_Провайдеры" id="fafad630-0351-455b-a47e-938956ab48b5" configVersion="5f5ef54fe7add18dc4bfba6c9280ce9d07639e70">
+			<Metadata name="Enum.EBC_Провайдеры.EnumValue.ViberBusiness" id="06719911-a637-4359-83a9-1a9a910efb8e"/>
+			<Metadata name="Enum.EBC_Провайдеры.EnumValue.WebChat" id="18fc6c8c-341e-4505-8e97-a079ed9005fc"/>
+			<Metadata name="Enum.EBC_Провайдеры.EnumValue.EchatViber" id="30f6f67e-654e-4d6f-b62e-3c0de40d401a"/>
+			<Metadata name="Enum.EBC_Провайдеры.EnumValue.ViberPersonal" id="3c52b686-a866-40df-ac8e-5ff0840e1926"/>
+			<Metadata name="Enum.EBC_Провайдеры.EnumValue.TelegramBot" id="4f6aacc1-0a8b-4070-83f5-b72f1e4db35a"/>
+			<Metadata name="Enum.EBC_Провайдеры.EnumValue.WhatsAppPersonal" id="5139f64b-2e5e-49c7-bafc-44ead71d9e39"/>
+			<Metadata name="Enum.EBC_Провайдеры.EnumValue.Instagram" id="5b6594a8-0f7a-498a-afe4-be3ab26ff6d8"/>
+			<Metadata name="Enum.EBC_Провайдеры.EnumValue.ViberBot" id="5e5f3791-f56c-461e-93de-0b1b1b188561"/>
+			<Metadata name="Enum.EBC_Провайдеры.EnumValue.Telegram" id="7097d6e9-af22-44f8-b78e-2c004a6819d8"/>
+			<Metadata name="Enum.EBC_Провайдеры.EnumValue.Facebook" id="c37691ae-aa15-44bc-84d5-88e1647c6505"/>
+			<Metadata name="Enum.EBC_Провайдеры.EnumValue.Undefined" id="cb2d98f6-ee69-468e-8134-bbf71cd3586c"/>
+			<Metadata name="Enum.EBC_Провайдеры.EnumValue.WhatsApp" id="d5d088f6-97e9-4678-aada-50145a5e31a5"/>
+		</Metadata>
+		<Metadata name="Enum.EBC_Провайдеры.ManagerModule" id="fafad630-0351-455b-a47e-938956ab48b5.0" configVersion="d7647478b56f7c24e29eef0337335f31ae7fa87b"/>
+		<Metadata name="Enum.EBC_РезультатыСинхронизации" id="2eb5dc1f-99b1-44cb-b32f-e4c661c5c940" configVersion="85f372b09010ecf0d9889050f79494048ff5bfec">
+			<Metadata name="Enum.EBC_РезультатыСинхронизации.EnumValue.Ошибка" id="6bdbf35d-f4b0-4ea8-b030-515db9220ab1"/>
+			<Metadata name="Enum.EBC_РезультатыСинхронизации.EnumValue.ОшибкаАвторизации" id="b672cf7c-6aac-41aa-9713-913631aa6d7b"/>
+			<Metadata name="Enum.EBC_РезультатыСинхронизации.EnumValue.Успех" id="f9fedabd-0b3a-4e6e-a1d2-ad7ec3cdd3f2"/>
+		</Metadata>
+		<Metadata name="Enum.EBC_РезультатыСинхронизации.ManagerModule" id="2eb5dc1f-99b1-44cb-b32f-e4c661c5c940.0" configVersion="b62dceb9dd9386baf465db44801a744a843a8b38"/>
+		<Metadata name="Enum.EBC_РолиПользователей" id="507f33c0-a509-4aed-9e3d-c74972d5b6cc" configVersion="c8ba64dedbf96a832ae8cfb61dde7fda8f7b3e34">
+			<Metadata name="Enum.EBC_РолиПользователей.EnumValue.Оператор" id="4a20a568-9a11-4a5d-84ac-fc763b3a4b78"/>
+			<Metadata name="Enum.EBC_РолиПользователей.EnumValue.Администратор" id="9f4cff37-a4af-4034-ae56-4faaaeafc83c"/>
+		</Metadata>
+		<Metadata name="Enum.EBC_РолиПользователей.ManagerModule" id="507f33c0-a509-4aed-9e3d-c74972d5b6cc.0" configVersion="85592c22970f32565cf52327089f7f4d31ed71b0"/>
+		<Metadata name="Enum.EBC_ТипыЧатов" id="c73a3b27-56be-4987-8516-a3f107cf9836" configVersion="d6b8f2468989368de596688e3fa72478509c5777">
+			<Metadata name="Enum.EBC_ТипыЧатов.EnumValue.Канал" id="289a71dc-8c6a-49ab-b744-19686c346ec4"/>
+			<Metadata name="Enum.EBC_ТипыЧатов.EnumValue.Пост" id="6cce698b-d176-4a50-9000-297106b37c12"/>
+			<Metadata name="Enum.EBC_ТипыЧатов.EnumValue.Личный" id="a0abc328-c742-4cb3-8566-6671df081e24"/>
+			<Metadata name="Enum.EBC_ТипыЧатов.EnumValue.Бот" id="f9783f0f-984d-49fd-a5a7-b41dd9098b73"/>
+			<Metadata name="Enum.EBC_ТипыЧатов.EnumValue.Группа" id="fa894b0e-6598-479e-9130-8c6b6b82c600"/>
+		</Metadata>
+		<Metadata name="Enum.EBC_ТипыЧатов.ManagerModule" id="c73a3b27-56be-4987-8516-a3f107cf9836.0" configVersion="333827eb542819888c44e76166b1f2159e76bab7"/>
+		<Metadata name="Enum.EBC_УровниЖурнала" id="bb9cb74b-32d4-437b-aca8-db70566b002d" configVersion="6db6f9b0c8aa5d7cedfe569af7b2912c6ca73708">
+			<Metadata name="Enum.EBC_УровниЖурнала.EnumValue.Ошибка" id="9676d1e6-e837-4d27-95fe-539faa43d74b"/>
+			<Metadata name="Enum.EBC_УровниЖурнала.EnumValue.Отладка" id="b0c4c199-7c16-437a-962c-638af7833808"/>
+			<Metadata name="Enum.EBC_УровниЖурнала.EnumValue.Трассировка" id="b3f82480-424e-4709-9e88-7906809acf18"/>
+			<Metadata name="Enum.EBC_УровниЖурнала.EnumValue.Информация" id="e6a02596-9522-4fdd-beff-36bcfdc6bd50"/>
+			<Metadata name="Enum.EBC_УровниЖурнала.EnumValue.Предупреждение" id="f00cf12d-400a-4ef8-b4fe-424f5884fd5c"/>
+		</Metadata>
+		<Metadata name="Enum.EBC_УровниЖурнала.ManagerModule" id="bb9cb74b-32d4-437b-aca8-db70566b002d.0" configVersion="b36f097639c9ba8d260ea436b76f5fe732d70656"/>
+		<Metadata name="Enum.ВидыКонтрагентов" id="062fb8ba-943e-4f47-85e1-13821262988f" configVersion="f349eab8bd48b275b26ee0836875155da69fda0f"/>
+		<Metadata name="Enum.ТипыКонтактнойИнформации" id="4a3cfcc7-d9ae-47c3-b20b-da03cbf727fe" configVersion="1541ac2ca595fb4ce16f2c0b8c86b25389279287"/>
+		<Metadata name="InformationRegister.EBC_Лог" id="ff8cde9e-25c6-4318-a8b8-ff8440b3814a" configVersion="380fe04d98d529031c14975ffbbf791ec69d4ab8">
+			<Metadata name="InformationRegister.EBC_Лог.Resource.Путь" id="0510e9f5-5b6c-4b70-a17c-c3e5c37c63a5"/>
+			<Metadata name="InformationRegister.EBC_Лог.Resource.ИдентификаторЧатаEBC" id="12767361-d6c4-46e2-9e0e-2e342836ca63"/>
+			<Metadata name="InformationRegister.EBC_Лог.Resource.КодОшибки" id="1e24ebe6-9946-44c9-a5da-cb6e574e8cfa"/>
+			<Metadata name="InformationRegister.EBC_Лог.Resource.Событие" id="3657fd66-1a4a-41fe-9a23-51f17a8a7afa"/>
+			<Metadata name="InformationRegister.EBC_Лог.Resource.Чат" id="3854188f-a786-4676-996f-769510db9bfb"/>
+			<Metadata name="InformationRegister.EBC_Лог.Resource.ТекстОшибки" id="39488c79-81ba-47b9-a7b8-6da99779aa90"/>
+			<Metadata name="InformationRegister.EBC_Лог.Resource.Уровень" id="459ec0b1-c550-4a6a-98ef-d00e7b96eb61"/>
+			<Metadata name="InformationRegister.EBC_Лог.Resource.КорреляционныйИдентификатор" id="4d775d1e-1b3f-4bdf-a931-a2fbab03384e"/>
+			<Metadata name="InformationRegister.EBC_Лог.Resource.ПредставлениеЧата" id="51cdf5ba-6db9-419a-ac67-c81cc78d2552"/>
+			<Metadata name="InformationRegister.EBC_Лог.Resource.Категория" id="5597d22c-8f21-4559-9d85-d988a72f6028"/>
+			<Metadata name="InformationRegister.EBC_Лог.Resource.ДлительностьМс" id="5d724601-2341-4d0b-916c-706b93a57392"/>
+			<Metadata name="InformationRegister.EBC_Лог.Resource.СтатусКод" id="680769ac-e53b-4341-a9f3-aafc97daeebe"/>
+			<Metadata name="InformationRegister.EBC_Лог.Resource.ПользовательИБ" id="6ae95433-9bcc-45fb-8453-2f65190fe114"/>
+			<Metadata name="InformationRegister.EBC_Лог.Resource.Метод" id="851fe457-1673-4ccd-b387-805bfa17ad13"/>
+			<Metadata name="InformationRegister.EBC_Лог.Resource.ПредставлениеОбъекта" id="8b1900aa-efae-41d5-bcc6-c2a32c558bc1"/>
+			<Metadata name="InformationRegister.EBC_Лог.Resource.ДатаНачала" id="8ca6d981-4a89-4e44-8b6b-b223fef25def"/>
+			<Metadata name="InformationRegister.EBC_Лог.Resource.КоличествоПопыток" id="939b2da5-fa7f-4d38-b850-b554b1e80fc0"/>
+			<Metadata name="InformationRegister.EBC_Лог.Resource.ТипОбъекта" id="93ee1879-b40e-410f-b3e1-61aa5c8e9c46"/>
+			<Metadata name="InformationRegister.EBC_Лог.Resource.ИдентификаторОбъекта" id="a38f29e0-e482-4bde-b5fa-f78d376c0ec2"/>
+			<Metadata name="InformationRegister.EBC_Лог.Resource.Компания" id="ac6771d3-7591-4189-8948-a9ce63f0b5ad"/>
+			<Metadata name="InformationRegister.EBC_Лог.Resource.Детали" id="c5a46ffa-7bbc-4559-827a-4b003ea6fc3f"/>
+			<Metadata name="InformationRegister.EBC_Лог.Resource.РазмерЗапроса" id="c5b21aa4-28c9-4265-b689-3faf7a82e204"/>
+			<Metadata name="InformationRegister.EBC_Лог.Resource.НавигационнаяСсылкаОбъекта" id="e09898c8-2f15-4c32-82ae-87feec855de2"/>
+			<Metadata name="InformationRegister.EBC_Лог.Resource.РазмерОтвета" id="e254b65b-e2aa-4d42-8739-9ab8a616c257"/>
+			<Metadata name="InformationRegister.EBC_Лог.Resource.РезультатДействия" id="ef4cdd51-c006-4b9a-bbb9-045819698632"/>
+			<Metadata name="InformationRegister.EBC_Лог.Dimension.ИдентификаторЗаписи" id="f5af88eb-4ad6-4158-a5b6-474cc4f09011"/>
+		</Metadata>
+		<Metadata name="InformationRegister.EBC_Лог.Form.ФормаЗаписи" id="49ba8cd5-3492-474c-b825-b4aafc14a86e" configVersion="2cbb4276bac44f52fb8a64343d8cf435f506c127"/>
+		<Metadata name="InformationRegister.EBC_Лог.Form.ФормаЗаписи.Form" id="49ba8cd5-3492-474c-b825-b4aafc14a86e.0" configVersion="aebaed6179e85d3e8a59cab117c4394dc35c9c6e"/>
+		<Metadata name="InformationRegister.EBC_Лог.Form.ФормаСписка" id="b8552e4d-4e41-487e-b889-d136f7ba577d" configVersion="0c988ee2bce259000e93516379bc57147e8b1bb9"/>
+		<Metadata name="InformationRegister.EBC_Лог.Form.ФормаСписка.Form" id="b8552e4d-4e41-487e-b889-d136f7ba577d.0" configVersion="8c1fbf7e47b05a26afa871a4a572f1164e659cbf"/>
+		<Metadata name="InformationRegister.EBC_Лог.RecordSetModule" id="ff8cde9e-25c6-4318-a8b8-ff8440b3814a.1" configVersion="84e198861f4e9fb808e9f9a4805ff91ca60c9e3f"/>
+		<Metadata name="InformationRegister.EBC_Настройки" id="551d5717-24af-4e4e-9551-d22c12ed2cbb" configVersion="4cbd1a402680e47dded0fe9f020c9f57ba9cc1ff">
+			<Metadata name="InformationRegister.EBC_Настройки.Resource.НастройкиЛогированияМигрированы" id="0d908c4e-cfaf-4406-88f3-5c3386650856"/>
+			<Metadata name="InformationRegister.EBC_Настройки.Resource.ПоказыватьОповещенияВебПлагина" id="3a7c1e94-6b28-4d5f-9c03-e81f4a2d7b56"/>
+			<Metadata name="InformationRegister.EBC_Настройки.Resource.МасштабКартинкиПечатнойФормы" id="3e9a1c76-58b4-4f20-9d61-c0a7e284f513"/>
+			<Metadata name="InformationRegister.EBC_Настройки.Resource.ХранитьЛогДней" id="53a25649-cc8e-42d8-ac91-8ddb4e331eaf"/>
+			<Metadata name="InformationRegister.EBC_Настройки.Resource.МаксимальныйРазмерФайлаМБ" id="54e956a2-e05e-46ad-8afe-0f87cb5c19f0"/>
+			<Metadata name="InformationRegister.EBC_Настройки.Resource.УровеньЛогирования" id="58acc82d-199a-4178-84c2-373a11d3f86e"/>
+			<Metadata name="InformationRegister.EBC_Настройки.Dimension.ПользовательИБ" id="5c4764a8-9054-411b-bcc8-deb7760715da"/>
+			<Metadata name="InformationRegister.EBC_Настройки.Resource.КоличествоПовторов" id="5f08714e-a051-4e83-ba89-3439793b349f"/>
+			<Metadata name="InformationRegister.EBC_Настройки.Resource.Пользователь" id="61d90533-5a3f-4b77-b2b3-aa026ffeb8d7"/>
+			<Metadata name="InformationRegister.EBC_Настройки.Resource.КомпанияEBC" id="7fe3b20d-52dd-44e4-bd75-6778c8b3aa25"/>
+			<Metadata name="InformationRegister.EBC_Настройки.Resource.БазовыйАдресАпи" id="a0fdcf9b-7081-4858-a6d9-0a5dc32691e0"/>
+			<Metadata name="InformationRegister.EBC_Настройки.Resource.ЛогироватьТехническиеСобытия" id="a2cd1c1a-060a-41c5-80ab-2364d55f55f0"/>
+			<Metadata name="InformationRegister.EBC_Настройки.Resource.ТаймаутСоединенияСек" id="bbc91636-6b9d-4ace-87cd-3d83bbdb330c"/>
+			<Metadata name="InformationRegister.EBC_Настройки.Resource.ЛогироватьДействияПользователей" id="c3951d37-90eb-4dd7-b0ab-b4fd3dff8347"/>
+			<Metadata name="InformationRegister.EBC_Настройки.Resource.ТокенДоступа" id="d286e1bf-1c93-4a7f-889f-94feaa871039"/>
+			<Metadata name="InformationRegister.EBC_Настройки.Resource.Активен" id="da345a51-9f73-4b26-bc57-d2c7c48a7c63"/>
+		</Metadata>
+		<Metadata name="InformationRegister.EBC_Настройки.Form.ФормаЗаписи" id="8c89e968-3fba-4d07-bbf8-3da9f319b0ec" configVersion="4dc81ee13a620f8db5077f5b980f279a7404cd37"/>
+		<Metadata name="InformationRegister.EBC_Настройки.Form.ФормаЗаписи.Form" id="8c89e968-3fba-4d07-bbf8-3da9f319b0ec.0" configVersion="c2aeac91449eb72502c4caf5af3cfa920170a6c3"/>
+		<Metadata name="InformationRegister.EBC_Настройки.RecordSetModule" id="551d5717-24af-4e4e-9551-d22c12ed2cbb.1" configVersion="9c1adfe31b07cb5e811d762193bcb40aecf979f4"/>
+		<Metadata name="InformationRegister.EBC_СвязиОбъектов" id="6fca2734-386b-446e-8bd9-450784f5b23e" configVersion="786de967365fdf06a1dea39592f2336ffd4fba55">
+			<Metadata name="InformationRegister.EBC_СвязиОбъектов.Dimension.ТипОбъекта" id="3c162bc2-9e8a-4467-bc18-47c0dcbd49e2"/>
+			<Metadata name="InformationRegister.EBC_СвязиОбъектов.Attribute.ДатаУстановки" id="54caa050-24f4-4502-a75b-9134f2acea5d"/>
+			<Metadata name="InformationRegister.EBC_СвязиОбъектов.Attribute.Идентификатор" id="58f00986-f3d5-45a9-9612-0684662b022e"/>
+			<Metadata name="InformationRegister.EBC_СвязиОбъектов.Attribute.НавигационнаяСсылка" id="67223312-15d8-4906-a1f5-57b1a2d2b4ed"/>
+			<Metadata name="InformationRegister.EBC_СвязиОбъектов.Attribute.Комментарий" id="73741cfc-a3e8-40cd-b955-13b0d93fb5bf"/>
+			<Metadata name="InformationRegister.EBC_СвязиОбъектов.Attribute.ПредставлениеОбъекта" id="82facb02-ec50-4df6-8201-d1861388fe78"/>
+			<Metadata name="InformationRegister.EBC_СвязиОбъектов.Dimension.ИдентификаторОбъекта" id="8a89ee1d-61c3-4d7a-b9c2-5fe4de7d3ca8"/>
+			<Metadata name="InformationRegister.EBC_СвязиОбъектов.Attribute.Автор" id="912ffa98-f450-44eb-8192-7bd93a3ba4bb"/>
+			<Metadata name="InformationRegister.EBC_СвязиОбъектов.Attribute.АвторИБ" id="9690e8af-37aa-4a67-bab2-4c3b0ca53ffb"/>
+			<Metadata name="InformationRegister.EBC_СвязиОбъектов.Attribute.ИсточникСвязи" id="b9c01f0c-5832-4506-9436-49b12b930c05"/>
+			<Metadata name="InformationRegister.EBC_СвязиОбъектов.Dimension.Чат" id="f3e253e6-5d3c-45ac-a356-e0915dbc3863"/>
+			<Metadata name="InformationRegister.EBC_СвязиОбъектов.Resource.ОсновнаяСвязь" id="f8ae659f-adca-412d-ad39-d7ea126fdefe"/>
+		</Metadata>
+		<Metadata name="InformationRegister.EBC_СвязиОбъектов.Form.ФормаЗаписи" id="79f48060-5eab-4570-a6aa-eab9048ea79e" configVersion="18fb43af8f96a7eab73c357a33fe8b67a8888c3c"/>
+		<Metadata name="InformationRegister.EBC_СвязиОбъектов.Form.ФормаЗаписи.Form" id="79f48060-5eab-4570-a6aa-eab9048ea79e.0" configVersion="d2f36920a5b23f0621f75c636c9d5d005f09e2c4"/>
+		<Metadata name="InformationRegister.EBC_СвязиОбъектов.Form.ФормаСписка" id="697d67fe-d44f-42ff-b8e0-94b97608e000" configVersion="475e924dc56d3a31a185860b5985cc27fdf3c611"/>
+		<Metadata name="InformationRegister.EBC_СвязиОбъектов.Form.ФормаСписка.Form" id="697d67fe-d44f-42ff-b8e0-94b97608e000.0" configVersion="e2bb1b46bb970a0db32b93e6eeed97ddec27200e"/>
+		<Metadata name="InformationRegister.EBC_СвязиОбъектов.RecordSetModule" id="6fca2734-386b-446e-8bd9-450784f5b23e.1" configVersion="31e406752b55c870119f96238ffd7fc8ee492e91"/>
+		<Metadata name="InformationRegister.EBC_СостояниеСинхронизации" id="648a56ab-abc6-4ca4-91cb-36004b90b4ed" configVersion="ca07ecadc8b7f69689035f81c9e68c400014b987">
+			<Metadata name="InformationRegister.EBC_СостояниеСинхронизации.Dimension.ВидОперации" id="1fa01d79-4a33-47a1-a69b-63e4b6d4f813"/>
+			<Metadata name="InformationRegister.EBC_СостояниеСинхронизации.Dimension.Компания" id="38e2c5b7-c00d-4e1c-91d5-eff80cb0f6aa"/>
+			<Metadata name="InformationRegister.EBC_СостояниеСинхронизации.Attribute.Пользователь" id="68bee025-61ed-4df3-bcb9-8e580e4809bd"/>
+			<Metadata name="InformationRegister.EBC_СостояниеСинхронизации.Resource.ИдентификаторСеанса" id="d3acad4e-a252-4d41-b9dc-1dce41ffc79b"/>
+			<Metadata name="InformationRegister.EBC_СостояниеСинхронизации.Resource.Начало" id="e8b1d014-b7ac-439f-820a-8e492861c33d"/>
+			<Metadata name="InformationRegister.EBC_СостояниеСинхронизации.Resource.Истекает" id="fcf36b42-0f21-496b-ab88-238dd6710319"/>
+		</Metadata>
+		<Metadata name="InformationRegister.EBC_СостояниеСинхронизации.RecordSetModule" id="648a56ab-abc6-4ca4-91cb-36004b90b4ed.1" configVersion="b2de36a5368553cfc653b28b8c084b1243edd8e8"/>
+		<Metadata name="InformationRegister.EBC_ТипыОбъектовПривязки" id="25f41d13-d8f1-4498-8e10-151aedea444f" configVersion="0dacd4afe2979d719819227ba9b01664200bb631">
+			<Metadata name="InformationRegister.EBC_ТипыОбъектовПривязки.Resource.Представление" id="a2d90e64-8c15-4b73-a0f8-6d34c9e2b581"/>
+			<Metadata name="InformationRegister.EBC_ТипыОбъектовПривязки.Resource.Порядок" id="b7e35c81-4a2f-4d09-9c64-5e8b1f7a3d40"/>
+			<Metadata name="InformationRegister.EBC_ТипыОбъектовПривязки.Resource.Использовать" id="c1a4f0d2-9b73-4e58-8f16-2d0a7c5e9b31"/>
+			<Metadata name="InformationRegister.EBC_ТипыОбъектовПривязки.Dimension.ПолноеИмя" id="d8c62b40-3f91-4a17-9e5c-7b02d1f8a463"/>
+			<Metadata name="InformationRegister.EBC_ТипыОбъектовПривязки.Resource.ЕстьРеквизитКонтрагент" id="f4b18a27-6e50-4c92-b83d-1a7f0d6c4e95"/>
+		</Metadata>
+		<Metadata name="InformationRegister.EBC_ТипыОбъектовПривязки.ManagerModule" id="25f41d13-d8f1-4498-8e10-151aedea444f.2" configVersion="b1d72086d1ff6c6b2723562275e3dca9a4a6cef9"/>
+		<Metadata name="Language.Русский" id="8c4ba407-d27b-41d4-81b7-2dec5d3fa713" configVersion="a475888a8a33359f38bd433bde3d61c4ae100c06"/>
+		<Metadata name="Language.Украинский" id="92f121ab-20a5-44ae-88a0-584830795753" configVersion="9f578b9b935cda6d405705cf4fa2e877a012331a"/>
+		<Metadata name="Role.EBC_Администратор" id="8031cf1c-0358-47ed-b1ef-6f5bb37dedd9" configVersion="b89e7f7a85a69475dd29bb84586aa08934eb2dee"/>
+		<Metadata name="Role.EBC_Администратор.Rights" id="8031cf1c-0358-47ed-b1ef-6f5bb37dedd9.0" configVersion="dc051461ceb4cdf34bcf27b4b93370bf0b38ab40"/>
+		<Metadata name="Role.EBC_Оператор" id="0a288748-202b-410b-9e56-456d5bd03457" configVersion="748efc833b181f45214dddb4a00f3bff6ac1df67"/>
+		<Metadata name="Role.EBC_Оператор.Rights" id="0a288748-202b-410b-9e56-456d5bd03457.0" configVersion="ed1bf18145ab005fd4a99a02305f7cdfe838ab67"/>
+		<Metadata name="Role.EBC_ОсновнаяРоль" id="31afcad5-55c2-4978-9d85-e983ba47f15f" configVersion="a74dc7636e7bafd905ba49d51ab2ba95cc66de4d"/>
+		<Metadata name="Role.EBC_ОсновнаяРоль.Rights" id="31afcad5-55c2-4978-9d85-e983ba47f15f.0" configVersion="b00e0bae95a7a96715fdb36c9487d27a0394fdde"/>
+		<Metadata name="Role.EBC_Просмотр" id="2059af04-8226-47dd-bcc7-1a4f334830eb" configVersion="3bea41e7507e9fb138beb7e6426a8f85a7f0d835"/>
+		<Metadata name="Role.EBC_Просмотр.Rights" id="2059af04-8226-47dd-bcc7-1a4f334830eb.0" configVersion="90d62bc34a3ca1f05d839e43c7d0f35a778b270a"/>
+		<Metadata name="ScheduledJob.EBC_РотацияЛогов" id="41a0d256-bb19-4b68-9bb0-d589c92c75bb" configVersion="c079b754181a8583a1be3f5ef95e3f8d3712a6d1"/>
+		<Metadata name="ScheduledJob.EBC_РотацияЛогов.Schedule" id="41a0d256-bb19-4b68-9bb0-d589c92c75bb.0" configVersion="7ca20e6040f7394738bd1f730d4a8ae639fc2c3c"/>
+		<Metadata name="ScheduledJob.EBC_СинхронизацияСправочников" id="5a81ed71-650e-49c1-bf45-d74860dd7791" configVersion="640219448e8cc155c2f5695ca677f526ecbebfe9"/>
+		<Metadata name="ScheduledJob.EBC_СинхронизацияСправочников.Schedule" id="5a81ed71-650e-49c1-bf45-d74860dd7791.0" configVersion="ec3b4ebb8a1c640d3bff38e54f22bf59c082079c"/>
+		<Metadata name="ScheduledJob.EBC_СинхронизацияЧатов" id="3dfbae8f-ff2e-49aa-aa01-46d52abd36ee" configVersion="a767c3f8d3ef52d981b15d52cacf56411be4353f"/>
+		<Metadata name="ScheduledJob.EBC_СинхронизацияЧатов.Schedule" id="3dfbae8f-ff2e-49aa-aa01-46d52abd36ee.0" configVersion="eea7a19d5d3a7a46fda98afa456332f88fe04fb5"/>
+		<Metadata name="Subsystem.EBC_EasyBusyChat" id="5d940a91-4daf-4c80-8db3-a71321241930" configVersion="e084f117dc8c962bf974d51b21cc617078dcfac7"/>
+		<Metadata name="Subsystem.EBC_EasyBusyChat.CommandInterface" id="5d940a91-4daf-4c80-8db3-a71321241930.1" configVersion="c8ad49154b39fcbee56684148ae6cdb387850ce0"/>
+		<Metadata name="Subsystem.EBC_EasyBusyChat.Subsystem.EBC_Администрирование" id="fae75c23-1ccd-4528-ac8e-3c9efaf10df6" configVersion="8b14e4b2929a63b6cfdb378b95b0926dc25d594c"/>
+		<Metadata name="Subsystem.EBC_EasyBusyChat.Subsystem.EBC_Администрирование.CommandInterface" id="fae75c23-1ccd-4528-ac8e-3c9efaf10df6.1" configVersion="d91f54961e1b7ab76a92c0123ce4c50062f38aee"/>
+		<Metadata name="Subsystem.EBC_EasyBusyChat.Subsystem.EBC_Чат" id="c0421a81-e513-4642-b7f3-af79092a6543" configVersion="7d7b4743b28b0f424a4c3951bf0994b9e792073b"/>
+		<Metadata name="Subsystem.EBC_EasyBusyChat.Subsystem.EBC_Чат.CommandInterface" id="c0421a81-e513-4642-b7f3-af79092a6543.1" configVersion="cdefd232f56768cb9a696eba948da096365b7a41"/>
+	</ConfigVersions>
+</ConfigDumpInfo>

@@ -1,0 +1,11 @@
+[package]
+name = "easy_busy_chat_ipc_protocol"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+serde_json = "1"
+sha2 = "0.10"

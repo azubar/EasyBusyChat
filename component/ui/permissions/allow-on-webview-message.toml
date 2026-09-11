@@ -1,0 +1,6 @@
+[[permission]]
+identifier = "allow-on-webview-message"
+description = "Allows invoking the on_webview_message command"
+commands.allow = [
+    "on_webview_message"
+]

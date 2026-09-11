@@ -1,0 +1,35 @@
+{
+  "$schema": "https://raw.githubusercontent.com/tauri-apps/tauri/v2/tooling/cli/schema.json",
+  "productName": "EasyBusyUI",
+  "version": "0.6.1",
+  "identifier": "com.easybusychat.ui",
+  "build": {
+    "frontendDist": "./frontend",
+    "devUrl": null
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "label": "main",
+        "devtools": true,
+        "useHttpsScheme": true,
+        "title": "EasyBusy Chat",
+        "width": 800,
+        "height": 600,
+        "resizable": true,
+        "decorations": true,
+        "visible": false,
+        "transparent": false,
+        "skipTaskbar": false,
+        "center": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self' data: 'unsafe-inline' 'unsafe-eval'; frame-src 'self' https://analytics.easy-busy.cloud https://www.youtube.com; connect-src 'self' https://*.easy-busy.cloud https://api.easy-busy.cloud wss://*.easy-busy.cloud; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://chats.easy-busy.cloud; style-src 'self' 'unsafe-inline' https://chats.easy-busy.cloud https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https: blob:;"
+    }
+  },
+  "bundle": {
+    "active": false
+  }
+}
