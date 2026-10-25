@@ -179,8 +179,12 @@ mod tests {
             assert_eq!(WaitForSingleObject(child.0, 5000), WAIT_OBJECT_0);
             CloseHandle(child.0);
             CloseHandle(job);
-            std::fs::remove_file(exe).unwrap();
-            std::fs::remove_file(source).unwrap();
+            // MSVC also emits a PDB beside the helper executable.
+            for entry in std::fs::read_dir(&dir).unwrap() {
+                let entry = entry.unwrap();
+                assert!(entry.file_type().unwrap().is_file());
+                std::fs::remove_file(entry.path()).unwrap();
+            }
             std::fs::remove_dir(dir).unwrap();
         }
     }
