@@ -1,0 +1,37 @@
+name: Package component job fix
+on:
+  push:
+    branches: [fix/unf-kz-job-launch]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        target: [x86_64-pc-windows-msvc, i686-pc-windows-msvc]
+    defaults:
+      run:
+        working-directory: component
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install toolchain
+        run: |
+          rustup toolchain install 1.97.1 --profile minimal --target ${{ matrix.target }}
+          rustup default 1.97.1
+      - name: Job launch regression
+        env:
+          EASYBUSYCHAT_SKIP_UI_BUILD: '1'
+        run: cargo test --locked -p easy_busy_chat_addin --target ${{ matrix.target }} process::tests::launches_in_a_host_job_that_prohibits_breakaway -- --exact --nocapture
+      - name: Build release DLL and embedded UI
+        run: ./scripts/build-release.ps1 -Target ${{ matrix.target }}
+      - name: Verify DLL ABI and embedded UI
+        run: ./scripts/test-dll-smoke.ps1 -Target ${{ matrix.target }} -Dll target/${{ matrix.target }}/release/EasyBusyChat.dll -ExpectedUI target/ui_target/${{ matrix.target }}/release/EasyBusyUI.exe
+      - uses: actions/upload-artifact@v4
+        with:
+          name: component-job-fix-${{ matrix.target }}
+          path: |
+            component/target/${{ matrix.target }}/release/EasyBusyChat.dll
+            component/target/ui_target/${{ matrix.target }}/release/EasyBusyUI.exe

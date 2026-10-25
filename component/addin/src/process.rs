@@ -25,8 +25,10 @@ pub fn launch_ui(
     #[cfg(windows)]
     {
         use std::os::windows::process::CommandExt;
-        // DETACHED_PROCESS (0x00000008) | CREATE_BREAKAWAY_FROM_JOB (0x01000000)
-        cmd.creation_flags(0x00000008 | 0x01000000);
+        // Detach from the console, but keep the host's job membership. A host
+        // job may prohibit breakaway; requesting it makes CreateProcess fail
+        // with ERROR_ACCESS_DENIED even when the executable is accessible.
+        cmd.creation_flags(DETACHED_PROCESS);
     }
 
     let child = cmd.spawn()?;
@@ -111,4 +113,75 @@ pub fn ui_log_path(base: &std::path::Path, pipe: &str) -> std::path::PathBuf {
     let mut hash = std::collections::hash_map::DefaultHasher::new();
     pipe.hash(&mut hash);
     base.with_extension(format!("ui-{:016x}.log", hash.finish()))
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use windows_sys::Win32::System::JobObjects::*;
+
+    #[test]
+    fn launches_in_a_host_job_that_prohibits_breakaway() {
+        const CHILD: &str = "EBC_JOB_LAUNCH_REGRESSION_CHILD";
+        if std::env::var_os(CHILD).is_none() {
+            let status = Command::new(std::env::current_exe().unwrap())
+                .args([
+                    "--exact",
+                    "process::tests::launches_in_a_host_job_that_prohibits_breakaway",
+                    "--nocapture",
+                ])
+                .env(CHILD, "1")
+                .status()
+                .unwrap();
+            assert!(status.success());
+            return;
+        }
+
+        unsafe {
+            let job = CreateJobObjectW(std::ptr::null(), std::ptr::null());
+            assert!(!job.is_null());
+            assert_ne!(AssignProcessToJobObject(job, GetCurrentProcess()), 0);
+            let dir = std::env::temp_dir().join(format!("ebc-job-test-{}", std::process::id()));
+            std::fs::create_dir_all(&dir).unwrap();
+            let source = dir.join("helper.rs");
+            let exe = dir.join("helper.exe");
+            std::fs::write(
+                &source,
+                "fn main() { std::thread::sleep(std::time::Duration::from_secs(2)); }",
+            )
+            .unwrap();
+            assert!(Command::new("rustc")
+                .arg(&source)
+                .arg("-o")
+                .arg(&exe)
+                .status()
+                .unwrap()
+                .success());
+            // The old launch mode fails in this exact host environment.
+            use std::os::windows::process::CommandExt;
+            let old_error = Command::new(&exe)
+                .arg("__ebc_nonexistent_job_test_file__")
+                .creation_flags(DETACHED_PROCESS | CREATE_BREAKAWAY_FROM_JOB)
+                .spawn()
+                .unwrap_err();
+            assert_eq!(old_error.raw_os_error(), Some(5));
+
+            let profile = easy_busy_chat_ipc_protocol::auth_profile::AuthProfile::for_context(
+                "https://example.invalid",
+                "job-regression",
+                "synthetic",
+            );
+            let (_, child) = launch_ui(exe.to_str().unwrap(), "job-test", &profile, None)
+                .expect("UI helper must start without escaping the host job");
+            let mut in_job = 0;
+            assert_ne!(IsProcessInJob(child.0, job, &mut in_job), 0);
+            assert_ne!(in_job, 0);
+            assert_eq!(WaitForSingleObject(child.0, 5000), WAIT_OBJECT_0);
+            CloseHandle(child.0);
+            CloseHandle(job);
+            std::fs::remove_file(exe).unwrap();
+            std::fs::remove_file(source).unwrap();
+            std::fs::remove_dir(dir).unwrap();
+        }
+    }
 }
